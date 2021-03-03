@@ -69,6 +69,12 @@
                     "token2":"0x2170ed0880ac9a755fd29b2688956bd959f933f8",
                     "type":"farm",
                     "digits":18
+                } ,
+                { "contract":"0x65f79963c1681252c41ccfc37660599d01010c1a",
+                    "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "token2":"ETH",
+                    "type":"farm",
+                    "digits":18
                 } 
 
                 
