@@ -540,7 +540,7 @@
                 });
             },reqSwap : async function (){
 
-              var contract    =  "0x0917ed9cb1277e0190e1f5a208b75d8394294d1a";  //
+              var contract    =  "0xE8148De8c8c3441257Ce3A093746B37c569a6D3E";  //
               const web3 = new Web3(ethereum);
                
                 var abi   =[{
@@ -567,7 +567,7 @@
               var  contract4 = new web3.eth.Contract(abi, contract);
       
                
-              await   contract4.methods.allowance(fr,"0xC76B5963E07Ae0dBFA40d4e2fD48b8A4DD727509").call().then(function(resp) {
+              await   contract4.methods.allowance(fr,"0xba9A97e624a5e6C6A2C96CD2a9Aa4a470b9f8A93").call().then(function(resp) {
                   
                   if(resp>999999999)  {
                         $('.approve-swap').hide();
@@ -575,8 +575,8 @@
                       return  true; }
                   else
                   {
-                  var co    = "0x0917ed9cb1277e0190e1f5a208b75d8394294d1a";  //liq
-                  var to    = "0xC76B5963E07Ae0dBFA40d4e2fD48b8A4DD727509";  //mc
+                  var co    = "0xE8148De8c8c3441257Ce3A093746B37c569a6D3E";  //liq
+                  var to    = "0xba9A97e624a5e6C6A2C96CD2a9Aa4a470b9f8A93";  //mc
                   var abi =[
                   {"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},
                   ]; 
@@ -599,7 +599,7 @@
               },
                
                         startSwap : async function  (){
-                            var co    = "0xC76B5963E07Ae0dBFA40d4e2fD48b8A4DD727509";   
+                            var co    = "0xba9A97e624a5e6C6A2C96CD2a9Aa4a470b9f8A93";   
                             
                               
                               const web3 = new Web3(ethereum);
