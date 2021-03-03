@@ -1,0 +1,221 @@
+<% layout('../layouts/app') -%>
+<link rel="stylesheet" href="stisla/assets/css/customs/home.css">
+
+<div class="row mt-5" >
+    <div class="col-12 mb-4">
+        <div class="hero bg-primary text-white">
+          <div class="hero-inner text-center">
+            <h2 class='text-center'>Welcome </h2>
+            <h3 class='text-center'>~ <span id='asset-estimation'>0</span></h3>
+            <span class='mywallet-address logedin'></span> <button class="  btn btn-sm btn-success connect-to-wallet">CONNECT WALLET</button>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+
+    <style>
+      .card-body{padding:20px 0px !important}
+    </style>
+
+    <!-- <div class="col-12 mb-4">
+        <div class="hero text-white hero-bg-image hero-bg-parallax" data-background="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-green-blockchain-bitcoin-fintech-banner-image_196943.jpg">
+          <div class="hero-inner">
+            <h2>Welcome, Ujang!</h2>
+            <p class="lead">You almost arrived, complete the information about your account to complete registration.</p>
+            <div class="mt-4">
+              <a href="#" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i> Setup Account</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+ <!--
+      <div class="col-md-6">
+        <div class="card card-hero">
+          <div class="card-header">
+            <div class="card-icon">
+              <img src="stisla/assets/img/logo/bep20.png" alt="" class="image-card">
+            </div>
+            
+            <div class="card-description">
+                <h4>Farm and Staking</h4>
+            </div>
+          </div>
+          <div class="card-body p-2 text-center">
+              <img src="stisla/assets/img/logo/bep20.png" alt="" class="img-card-body">
+            <div class="tickets-list">
+                <div class="mt-3">
+                    <div>
+                        <h3 class="text-muted">0.00000</h3>
+                    </div>
+                    <div>
+                        <h4>Cake To Harvest</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h4 class="text-success">0.00000</h4>
+                    </div>
+                    <div>
+                        <h5>Cake In Wallet</h5>
+                    </div>
+                </div>
+              <a href="#!" class="btn btn-primary ticket-item ticket-more">
+                  Unlock Wallet
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card card-hero">
+          <div class="card-header">
+            <div class="card-icon">
+              <img src="stisla/assets/img/logo/bep20.png" alt="" class="image-card">
+            </div>
+             
+            <div class="card-description">
+                <h4>Farm and Staking</h4>
+            </div>
+          </div>
+          <div class="card-body p-2 text-center">
+              <img src="stisla/assets/img/logo/bep20.png" alt="" class="img-card-body">
+            <div class="tickets-list">
+                <div class="mt-3">
+                    <div>
+                        <h3 class="text-muted">0.00000</h3>
+                    </div>
+                    <div>
+                        <h4>Cake To Harvest</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h4 class="text-success">0.00000</h4>
+                    </div>
+                    <div>
+                        <h5>Cake In Wallet</h5>
+                    </div>
+                </div>
+              <a href="#!" class="btn btn-primary ticket-item ticket-more">
+                  Unlock Wallet
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+    <div class="col-12 col-12">
+      <div class="card card-primary">
+        <div class="card-body text-center">
+          
+          Claim free first KIND for your new wallet <br>
+           Everyone new Address with 0 KIND able to claim One Time FREE 2 KIND <br>
+           You only need to pay fee network transaction<br>
+           Join telegram group to Update <a target='_blank' href='https://t.me/kindcowfinance'>https://t.me/kindcowfinance</a><br><br>
+          <button class='text-center btn btn-warning btn-sm claim-airdrop'>Claim Free KIND</button>
+        </div>
+      </div>
+    </div>
+<!--
+    <div class="col-12">
+      <div class="card">
+       
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-striped" id="assets-table">
+              <thead>
+                <tr>
+                  <th>PID</th>
+                  <th>Name</th>
+                  <th>LP</th>
+                  <th>Pending Reward</th>
+                  
+                  <th class='text-center'>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   -->
+      
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class='text-center col-12'>KIND on Your wallet</h4>
+          </div>
+          <div class="card-body">
+            <h5 class='text-center col-12 your-wallet-lp-pid-0'>  KIND</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class='text-center  col-12'>Total Supply</h4>
+          </div>
+          <div class="card-body">
+            <h5 class='text-center col-12'><span class='supply-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6 ">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h4 class='text-center col-12'>Reward per Block</h4>
+            </div>
+            <div class="card-body">
+              <h5 class='text-center col-12'>1.1 KIND</h5>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-12 col-md-12 col-lg-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class='text-center  col-12'>Total Burn</h4>
+          </div>
+          <div class="card-body">
+            <h5 class='text-center col-12'><span class='burn-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-12 col-md-12 col-lg-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class='text-center  col-12'>Total Value Locked </h4>
+          </div>
+          <div class="card-body">
+            <h5 class='text-center col-12  '>$  <span class='tvl'>0</span>  </h5>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+      
+
+      <div class="col-12 col-md-6">
+
+      <a class="twitter-timeline" data-tweet-limit='1' href="https://twitter.com/kindcow_finance?ref_src=twsrc%5Etfw">Tweets by kindcow_finance</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+      </div>
+
+      
+
+
+</div>

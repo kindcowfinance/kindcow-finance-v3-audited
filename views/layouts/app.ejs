@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+<link rel="shortcut icon" href='stisla/assets/img/logo/kind-logo.png' />
+<title>App Kindcow Finance</title>
+<!-- stylesheet -->
+<% include ../partials/css -%>
+<link rel="stylesheet" href="stisla/assets/css/customs/app.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMM4FW9TKS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YMM4FW9TKS');
+</script>
+<style>
+  .loader {
+  width: 32px;
+  height: 90px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  border-bottom: 10px solid #FF3D00;
+  background-color: #FFF;
+  background-image: radial-gradient(ellipse at center, #FFF 34%, #FF3D00 35%, #FF3D00 54%, #FFF 55%), linear-gradient(#FF3D00 10px, transparent 0);
+  background-size: 28px 28px;
+  background-position: center 20px , center 2px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: animloaderBack 1s linear infinite alternate;
+}
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0px 15px #FF3D00 inset;
+  top: 67px;
+}
+.loader::after {
+  content: '';  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 34px;
+  height: 34px;
+  top: 112%;
+  background: radial-gradient(ellipse at center, #ffdf00 8%, rgba(249, 62, 0, 0.6) 24%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50% 50% 0;
+  background-repeat: no-repeat;
+  background-position: -44px -44px;
+  background-size: 100px 100px;
+  box-shadow: 4px 4px 12px 0px rgba(255, 61, 0, 0.5);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloaderBack {
+  0%, 30%, 70% {
+    transform: translateY(0px);
+  }
+  20%, 40%, 100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 4px 4px 12px 2px rgba(255, 61, 0, 0.75);
+    width: 34px;
+    height: 34px;
+    background-position: -44px -44px;
+    background-size: 100px 100px;
+  }
+  100% {
+    box-shadow: 2px 2px 8px 0px rgba(255, 61, 0, 0.5);
+    width: 30px;
+    height: 28px;
+    background-position: -36px -36px;
+    background-size: 80px 80px;
+  }
+}
+</style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="toast toast-custom hide" data-autohide="false">
+            <div class="toast-header">
+              <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                            <rect fill="#007aff" width="100%" height="100%" /></svg>
+              <strong id="toast-content-header" class="mr-auto">Bootstrap</strong>
+              <button onclick="$('.toast').toast('hide');" type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="toast-content-body" class="toast-body" id="toast-content-time">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+
+        <div class="main-wrapper">
+            <% include ../partials/sidebar -%>
+            <% include ../partials/navbar -%>
+
+             <!-- Main Content -->
+            <div class="main-content">
+                <section class="section">
+                    <div class="section-header">
+                        <div class="text-left text-center mr-3" style='font-size:35px' >
+                            <% if (data.back) { %>
+                                <a href="<%= data.back %>">
+                                    <i class="bi bi-arrow-left-square-fill cursor"></i>
+                                </a>
+                                <% } %>
+                          </div>
+                        <h1><%= data.title %></h1>
+                        <div class="section-header-breadcrumb">
+                          <div class="breadcrumb-item active"><a href="/">Dashboard</a></div>
+                         
+                          <div class="breadcrumb-item"><%= data.url %></div>
+                        </div>
+                      </div>
+
+                      <div class="section-body">
+                        <%- body -%>
+                      </div>
+                </section>
+            </div>
+
+            <footer class="main-footer">
+                <div class="footer-left">
+                Kindcow.finance
+                </div>
+                <div class="footer-right">
+                Best BSC Yiel farming
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="d-none" id="warp-loader" style="position: fixed;top: 0; left: 0; right: 0; bottom: 0;z-index: 9999;background-color: rgba(0,0,0,0.5);padding-top: 20%;">
+      <div class="text-center" style="padding: 20px;background-color: aquamarine;margin: 0 auto;max-width: 400px;border-radius: 25px;">
+        <span class="loader"></span>
+        <h4 class="text-center mt-5">Waiting Confirmation...</h4>
+        <button class="btn btn-sm btn-warning mt-2" onclick='$(this).parent().parent().hide()'>Close</button>
+      </div>
+    </div>
+    <!-- script -->
+    <% include ../partials/script -%>
+</body>
+</html>

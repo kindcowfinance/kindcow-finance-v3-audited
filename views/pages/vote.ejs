@@ -1,0 +1,73 @@
+<% layout('../layouts/app') -%>
+<link rel="stylesheet" href="stisla/assets/css/customs/vote.css">
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header" style="display: flex;justify-content: space-between;">
+          <div>
+            <a href="#" data-toggle="modal" data-target="#modal-add-new" data-backdrop="false" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> Add New Contract</a>
+          </div>
+          <div class="card-header-action">
+          <h4>Vote Reward: <span id='reward-voter'>0</span>  |  Your Kind : <span class='your-wallet-lp-pid-0'>0</span> </h4> 
+          </div>
+         
+
+
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-striped" id="sortable-table">
+              <thead>
+                <tr>
+                  <th>PID</th>
+                  <th>Contract</th>
+                  <th>Name</th>
+                  <th>Alloc Point</th>
+                  <th class='text-center'>Vote</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-add-new" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="border-radius: 5%;">
+          <div class="modal-header">
+            <h6 class="modal-title col-12" id="exampleModalCenterTitle">Add New Contract</h6>
+           
+          </div>
+          <div class="modal-body pb-0">
+            <p>
+              This is public finance , anyone can add LP address for FARMING or Token Contract Address for POOL ( Staking ).<br>
+              To submit project required 1000 KIND to burn and Will get 1,000 AllocPoint<br>
+              To start receive reward minimum must have 10,000 AllocPoint.<br>
+              Every One AllocPoint need 1 KIND , to send.<br>
+              50 %   KIND from Vote will be burn<br>
+              50 %   KIND from Vote will use for Random reward to Voters<br>
+              More AllocPoint More reward will given to the project<br> 
+            </p>
+            <div class="input-group">
+              
+              <input type="text" id="data-contract" placeholder="Enter your LP Contract Here to add" class="form-control text-center">
+            </div>
+          </div>
+
+          <div class="modal-footer" style="justify-content: center;">
+            <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal">Close</button>
+            <button id="add-contract" type="button" style="width: 200px;" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  

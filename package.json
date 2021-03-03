@@ -1,0 +1,33 @@
+{
+  "name": "bitstenfinance",
+  "version": "1.0.0",
+  "description": "Used",
+  "main": "express_full.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "node-sass": "^5.0.0",
+    "request": "^2.88.2",
+    "web3": "^1.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon express_full.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bisrimpn/bitstenfinance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bisrimpn/bitstenfinance/issues"
+  },
+  "homepage": "https://github.com/bisrimpn/bitstenfinance#readme"
+}

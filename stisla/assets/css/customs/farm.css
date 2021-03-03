@@ -1,0 +1,40 @@
+.card-flex {
+    flex: 0 0 50%;
+    padding: 0 5%;
+  }
+
+.card-content{
+    padding: 0 5%;
+    font-size: 16px;
+}
+
+.font-primary{
+    color: #6777ef;
+}
+.cursor {cursor:pointer}
+.pricing{border-radius:20px !important;
+   }
+    .pricing:hover{ 
+        -webkit-box-shadow: 0px 2px 39px 0px rgba(58,150,81,0.47);
+        -moz-box-shadow: 0px 2px 39px 0px rgba(58,150,81,0.47);
+        box-shadow: 0px 2px 39px 0px rgba(58,150,81,0.47);}
+
+.sidebar-menu{
+    font-size: 16px;
+}
+
+.modal-view{
+    padding: 15px 15px;
+    background-color: #8e9af373;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.text-up{
+    display: flex;
+    justify-content: space-between;
+}
+.modal{
+    background-color: rgba(0,0,0,0.5);
+}

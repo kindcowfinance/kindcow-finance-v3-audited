@@ -1,0 +1,135 @@
+{   "token"  :  {  "contract": "0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "name":"KIND",
+                    "digits":8
+                },
+    "master_contract":  {  "contract": "0xdf6e55f49daf065e2f47c0bb93612b50f0412d04",
+                            "name":"NEATHERD",
+                            "digits":8
+                        },
+    "pid" : [{ "contract":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":8
+                },
+                { "contract":"0x22f8ed79e003b5a13187fddb03d23b477d615184",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18
+                },
+                { "contract":"0x8394b60c98195bbcb5b9c4168c6fe416e32c6ac4",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },
+                { "contract":"0x8dd36f150bca30a9c0f7bb1b1a11df0ce629cdcc",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0x7979f6c54eba05e18ded44c4f986f49a5de551c2",
+                    "type":"farm",
+                    "digits":18
+                },
+                { "contract":"0xe1bf90647597a8195c201790b95faea7e63f76c7",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x1b96b92314c44b159149f7e0303511fb2fc4774f",
+                    "token1":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0xa527a61703d82139f8a06bc30097cc9caa2df5a6",
+                    "token1":"0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0xc15fa3e22c912a276550f3e5fe3b0deb87b55acd",
+                    "token1":"0x55d398326f99059ff775485246999027b3197955",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x3631234fea330e6bc5e8c7c86c70778a85b9192f",
+                    "token1":"0xf952fc3ca7325cc27d15885d37117676d25bfda6",
+                    "token2":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x70d8929d04b60af4fb9b58713ebcf18765ade422",
+                    "token1":"0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x233242524229b8cea887645746c8849577f88aa2",
+                    "token1":"0x58d6f302aaf33dd30a7666e16909db3c5c74021b",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x65f79963c1681252c41ccfc37660599d01010c1a",
+                    "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x8de8ced8a9e97aea5690a0c112f427b108ff2d00",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x57e7779b5e7ce500091ba2f61f7e5cd091b9097e",
+                    "token1":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token2":"0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x4fe89ac612ee309fa9dec1f501495eea44449924",
+                    "token1":"0xa94b7a842aadb617a0b08fa744e033c6de2f7595",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0xe8148de8c8c3441257ce3a093746b37c569a6d3e",
+                    "token1":"",
+                    "token2":"",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x3557af1c6b0b34767f5ad7fc2b16378f3a4f5dd5",
+                    "token1":"0x7f479d78380ad00341fdd7322fe8aef766e29e5a",
+                    "token2":"0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+                    "type":"farm",
+                    "digits":18
+                },{ "contract":"0x165AB245d394fC4a5bFB7D4679d6fB060f0C53a7",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":18
+                },{ "contract":"0x58d6f302aaf33dd30a7666e16909db3c5c74021b",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":18
+                }
+
+                
+                 
+    ],
+    "list_token" : [
+        ["KIND","0xe8148de8c8c3441257ce3a093746b37c569a6d3e"],
+        ["BUSD","0xe9e7cea3dedca5984780bafc599bd69add087d56"],
+        ["WBNB","0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"],
+        ["KEBAB","0x7979f6c54eba05e18ded44c4f986f49a5de551c2"],
+        ["CAKE","0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"],
+        ["OGC","0x33d53608167ac3679c0fe9f7a7a725891cf0f471"],
+        ["WBST","0x58d6f302aaf33dd30a7666e16909db3c5c74021b"],
+        ["BUSD-T","0x55d398326f99059ff775485246999027b3197955"],
+        ["ETH","0x2170ed0880ac9a755fd29b2688956bd959f933f8"],
+        ["EGG","0xf952fc3ca7325cc27d15885d37117676d25bfda6"],
+        ["FSXU","0xa94b7a842aadb617a0b08fa744e033c6de2f7595"],
+        ["WHIRL","0x7f479d78380ad00341fdd7322fe8aef766e29e5a"]
+        
+        
+        
+    ],
+    "price_feed" :[
+          ["WBST","bitsten","BST_USDT","USDT"],
+          ["BNB","bitsten","BNB_USDT","USDT"]
+    ] 
+    
+}
