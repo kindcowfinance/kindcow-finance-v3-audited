@@ -68,7 +68,7 @@ setInterval(function(){
 
 var  WALLET ={
         getrate : async function(c,p,d1,d2){
-   
+        if(c=="eth")return;
         const web3 = new Web3("https://bsc-dataseed.binance.org");
          
           var abi   =[{"constant":true,"inputs":[],"name":"getReserves","outputs":[{"internalType":"uint112","name":"_reserve0","type":"uint112"},{"internalType":"uint112","name":"_reserve1","type":"uint112"},{"internalType":"uint32","name":"_blockTimestampLast","type":"uint32"}],"payable":false,"stateMutability":"view","type":"function"}];
@@ -87,8 +87,9 @@ var  WALLET ={
 
 
     } ,getPoolInfo : async function(pid){
-  
+   
         var co    = setting.master_contract.contract;  //
+        if(co=="eth")return;
         //console.log(co);
         const web3 = new Web3("https://bsc-dataseed.binance.org");
          
@@ -112,7 +113,8 @@ var  WALLET ={
     },
     getWalletLpBalance : async function(con,pid,code,addr,digit){
       // if(setting.pid[pid].type=="staking")addr=setting.master_contract.contract;
-        
+      if(con=="eth")return;
+      if(addr=="eth")return;
         const web3 = new Web3("https://bsc-dataseed.binance.org");
        
         var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
@@ -133,7 +135,8 @@ var  WALLET ={
        
         const web3 = new Web3("https://bsc-dataseed.binance.org");
         
-        var co=setting.pid[pid].contract
+        var co=setting.pid[pid].contract;
+        if(co=="eth")return;
         if (typeof price1['global_lp'][pid] == 'undefined') {
             price1['global_lp'][pid]=0;
         }
@@ -154,7 +157,9 @@ var  WALLET ={
     } ,
     getlphere : async function(con,pid,addr,digit){
        //if(setting.pid[pid].type=="staking")addr=setting.master_contract.contract;
-       console.log(con+" --- "+pid);
+      // console.log(con+" --- "+pid);
+      if(con=="eth")return;
+      if(addr=="eth")return;
         const web3 = new Web3("https://bsc-dataseed.binance.org");
        
         var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
@@ -186,7 +191,8 @@ var  WALLET ={
   getstaking : async function( pid ){
 
       var addr=setting.master_contract.contract;
-     
+     var con = setting.pid[pid].contract;
+     if(con=="eth")return;
       const web3 = new Web3("https://bsc-dataseed.binance.org");
      
       var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
@@ -195,7 +201,7 @@ var  WALLET ={
     }
       try {
     
-    var  contract = new web3.eth.Contract(abi, setting.pid[pid].contract);
+    var  contract = new web3.eth.Contract(abi, con);
        
     await contract.methods.balanceOf(addr).call().then(function(resp) {
  
@@ -210,11 +216,11 @@ var  WALLET ={
 
 
 } ,getSym: async function(c){
-  
+        if(c=="eth")return;
         var co    = c;  //
         const web3 = new Web3("https://bsc-dataseed.binance.org");
         var abi   =[{"constant":true,"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
-
+        price1['sym']["eth"] ="BNB";
         try {
         var  contract = new web3.eth.Contract(abi, co);
         await contract.methods.symbol().call().then(function(resp) {
@@ -224,14 +230,14 @@ var  WALLET ={
            }
 
     },getName : async function(c){
-  
+      if(c=="eth")return;
         var co    = c;  //
         // var digit = setting.pid[pid].digits ;
         const web3 = new Web3("https://bsc-dataseed.binance.org");
          
           var abi   =[{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}
         ];
-
+        price1['name']["eth"] ="BNB";
         try {   
        var  contract = new web3.eth.Contract(abi, co);
         await contract.methods.name().call().then(function(resp) {
@@ -243,6 +249,7 @@ var  WALLET ={
     getRewardPool : async function(){
 
       var co    = setting.master_contract.contract;  //
+      if(co=="eth")return;
       // var digit = setting.pid[pid].digits ;
       const web3 = new Web3("https://bsc-dataseed.binance.org");
        
@@ -267,6 +274,7 @@ var  WALLET ={
     totalAloct : async function(){
 
       var co    = setting.master_contract.contract;  //
+      if(co=="eth")return;
       // var digit = setting.pid[pid].digits ;
       const web3 = new Web3("https://bsc-dataseed.binance.org");
        
@@ -291,6 +299,7 @@ var  WALLET ={
   getPoolInfoVote : async function(pid){
         //console.log(pid);
         var co    = setting.master_contract.contract;  //
+        if(co=="eth")return;
         const web3 = new Web3("https://bsc-dataseed.binance.org");
          
           var abi   =[{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"lpToken","type":"address"},{"internalType":"uint256","name":"allocPoint","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"},{"internalType":"uint256","name":"accKindPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"}],"stateMutability":"view","type":"function"}];
@@ -310,6 +319,7 @@ var  WALLET ={
     getSupply2: async function(c,d){
        
       var co    = c;  //
+      if(co=="eth")return;
       const web3 = new Web3("https://bsc-dataseed.binance.org");
 
       
@@ -337,6 +347,7 @@ var  WALLET ={
                 try {
             
               var  contract = new web3.eth.Contract(abi, c);
+              if(co=="eth")return;
                  
               await contract.methods.balanceOf(a).call().then(function(resp) {
               price1['burn'][c]=resp/(10**d);
@@ -351,13 +362,14 @@ var  WALLET ={
             getDigit: async function(c,t){
                 try {
                 var co    = c;  //
+                if(co=="eth")return;
                 const web3 = new Web3("https://bsc-dataseed.binance.org");
         
                 var abid = [{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"}];
                 var  contract = new web3.eth.Contract(abid, c);
                 await  contract.methods.decimals().call().then(function(d) {
-                if(t==3)WALLET.burn(c,d);
-                if(t==3)WALLET.getSupply2(c,d);
+                if(t==3)WALLET.burn(co,d);
+                if(t==3)WALLET.getSupply2(co,d);
                 });
         } catch (error) {
               
@@ -366,6 +378,7 @@ var  WALLET ={
         getPoolLength : async function(){
                 
                   var co    = setting.master_contract.contract;  //
+                  if(co=="eth")return;
                   // var digit = setting.pid[pid].digits ;
                   const web3 = new Web3("https://bsc-dataseed.binance.org");
                    

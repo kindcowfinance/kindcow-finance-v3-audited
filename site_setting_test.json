@@ -1,0 +1,39 @@
+{   "token"  :  {  "contract": "0xeBe9b15e38571cA7f9F958E6a7cdb538A9F30B3c",
+                    "name":"KIND",
+                    "digits":8
+                },
+    "master_contract":  {  "contract": "0xAFE25d846E851497643CF7D3Ff29Cb3483D586f9",
+                            "name":"NEATHERD",
+                            "digits":8
+                        },
+    "pid" : [{ "contract":"0xeBe9b15e38571cA7f9F958E6a7cdb538A9F30B3c",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":8
+                } ,
+                { "contract":"0xc6e6801d1b076392bd7adc6a650a5ed350c29341",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":18
+                }  
+                
+                
+
+                
+                 
+    ],
+    "list_token" : [
+        ["KIND","0x048ff1406159ddd90eec3132c0d60674e0e0d4be"]
+       
+        
+        
+        
+    ],
+    "price_feed" :[
+          ["WBST","bitsten","BST_USDT","USDT"],
+          ["BNB","bitsten","BNB_USDT","USDT"]
+    ] 
+    
+}

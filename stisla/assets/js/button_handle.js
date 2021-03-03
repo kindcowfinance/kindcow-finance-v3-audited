@@ -13,6 +13,8 @@ var classApprove      = Array();
 var classTotalLiq      = Array();
 var classApproveDeposit = Array();
 var classApproveWithdraw = Array();
+var classRodaDeposit = Array();
+var classRodaWithdraw = Array();
 
 var HANDLE_THIS = function(){
 
@@ -31,6 +33,8 @@ var HANDLE_THIS = function(){
   classTotalLiq      = Array();
   classApproveDeposit = Array();
   classApproveWithdraw = Array();
+    classRodaDeposit = Array();
+    classRodaWithdraw = Array();
   
 
 var allElements = document.querySelectorAll('*');
@@ -55,6 +59,8 @@ for (var i = 0; i < allElements.length; i++) {
       if (cls.indexOf("total-liq-pid") >= 0)classTotalLiq.push(cls);
       if (cls.indexOf("approve-deposit-lp-pid") >= 0)classApproveDeposit.push(cls);
       if (cls.indexOf("approve-withdraw-lp-pid") >= 0)classApproveWithdraw.push(cls);
+      if (cls.indexOf("roda-wd") >= 0)classRodaWithdraw.push(cls);
+      if (cls.indexOf("roda-dp") >= 0)classRodaDeposit.push(cls);
     }
   }
 }
@@ -102,6 +108,20 @@ classApprove.forEach(function(a){
         WALLET.reqApprove(a.replace("get-approve-pid-","")*1);
       });
 })
+
+console.log(classRodaWithdraw);
+
+//approve
+classRodaWithdraw.forEach(function(a){
+  console.log(a);
+  document.querySelectorAll("."+a)[0].addEventListener('onchange', function(event) {
+      console.log(document.getElementsByClassName(a).value);
+      HANDLE.rodawd(a.replace("roda-wd-","")*1);
+
+    });
+})
+
+
 
 
 //approve
@@ -190,6 +210,8 @@ if(document.querySelectorAll(".start-swap").length>0)
   
   WALLET.startSwap();
 });
+
+ 
 
 
  

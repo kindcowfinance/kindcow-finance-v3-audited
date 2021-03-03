@@ -326,6 +326,13 @@ var HANDLE ={
 
        // console.log('data' + datas);
     }
+    ,
+    rodawd : function (pid ) {
+        
+        console.log(pid);
+
+       // console.log('data' + datas);
+    }
 }
 
 
