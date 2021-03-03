@@ -48,7 +48,7 @@ price1['token_lp']['kind']={};
 price1['token_lp']['wbst']={};
 
 setInterval(function(){
-        WALLET.getrate("0x22f8ed79e003b5a13187fddb03d23b477d615184","KIND_BUSD",8,18);
+        WALLET.getrate("0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1","KIND_BUSD",8,18);
        
         setting.price_feed.forEach(element => {
             
@@ -421,7 +421,7 @@ for(var a=0;a<pid;a++){
         WALLET.getSupply(a); 
         WALLET.getWalletLpBalance('0xe9e7cea3dedca5984780bafc599bd69add087d56',a,'busd',setting.pid[a].contract,18);
         WALLET.getWalletLpBalance('0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',a,'wbnb',setting.pid[a].contract,18);
-        WALLET.getWalletLpBalance('0xe8148de8c8c3441257ce3a093746b37c569a6d3e',a,'kind',setting.pid[a].contract,8);
+        WALLET.getWalletLpBalance('0xe3ba88c38d2789fe58465020cc0fb60b70c10d32',a,'kind',setting.pid[a].contract,8);
         WALLET.getWalletLpBalance('0x58d6f302aaf33dd30a7666e16909db3c5c74021b',a,'wbst',setting.pid[a].contract,18);
         }
         else
