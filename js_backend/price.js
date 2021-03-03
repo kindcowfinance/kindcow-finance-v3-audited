@@ -347,7 +347,7 @@ var  WALLET ={
                 try {
             
               var  contract = new web3.eth.Contract(abi, c);
-              if(co=="eth")return;
+              if(c=="eth")return;
                  
               await contract.methods.balanceOf(a).call().then(function(resp) {
               price1['burn'][c]=resp/(10**d);
@@ -366,7 +366,7 @@ var  WALLET ={
                 const web3 = new Web3("https://bsc-dataseed.binance.org");
         
                 var abid = [{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"}];
-                var  contract = new web3.eth.Contract(abid, c);
+                var  contract = new web3.eth.Contract(abid, co);
                 await  contract.methods.decimals().call().then(function(d) {
                 if(t==3)WALLET.burn(co,d);
                 if(t==3)WALLET.getSupply2(co,d);
