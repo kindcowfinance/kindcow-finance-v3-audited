@@ -75,6 +75,12 @@
                     "token2":"eth",
                     "type":"farm",
                     "digits":18
+                } ,
+                { "contract":"0xa71427351503e2413a7204f0328d12e6e710bf2b",
+                    "token1":"0xac472d0eed2b8a2f57a6e304ea7ebd8e88d1d36f",
+                    "token2":"eth",
+                    "type":"farm",
+                    "digits":18
                 } 
 
                 
@@ -92,7 +98,8 @@
         ["ETH","0x2170ed0880ac9a755fd29b2688956bd959f933f8"],
         ["EGG","0xf952fc3ca7325cc27d15885d37117676d25bfda6"],
         ["FSXU","0xa94b7a842aadb617a0b08fa744e033c6de2f7595"],
-        ["WHIRL","0x7f479d78380ad00341fdd7322fe8aef766e29e5a"]
+        ["WHIRL","0x7f479d78380ad00341fdd7322fe8aef766e29e5a"],
+        ["ANI","0xac472d0eed2b8a2f57a6e304ea7ebd8e88d1d36f"]
         
         
         
