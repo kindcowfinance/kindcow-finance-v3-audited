@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="stisla/assets/css/customs/farm.css">
   
  
-  <div class="row" style='max-width: 1000px ; margin:20px auto;'>
+  <div class="row listing" style='max-width: 1000px ; margin:20px auto;'>
   
 <% for( var a=0; a <  (data.setting.pid.length) ;  a++ ){  -%>
 <%  if( data.setting.pid[a].type  != "farm") continue; %>
  
   
-    <div class="col-12  col-md-4 col-lg-4 diradius" id='pid-box-<%=  a  %>'>
+    <div class="col-12  col-md-4 col-lg-4 diradius list-project" id='pid-box-<%=  a  %>'>
       <div class="pricing pricing-highlight">
         <div class="pricing-title">
           LP Farming
@@ -22,7 +22,7 @@
           <h6 class="row" style="margin-top:20px">
           <div class="col-5 text-left " style="padding: 0px 10px">APR
           </div>
-          <div class="col-7  text-right text-right text-success apr-pid-<%=  a  %> " style=" padding: 0px 10px" >
+          <div class="col-7  text-right text-right text-success list-apr apr-pid-<%=  a  %> " style=" padding: 0px 10px" >
           0%
           </div>
         </h6>

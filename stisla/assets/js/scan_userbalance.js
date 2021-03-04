@@ -147,3 +147,14 @@ apy();
 
 
 HANDLE_THIS();
+
+function aaa(){
+divArr = $(".list-project")
+divArr.sort(function(a, b) {
+    //console.log($(a).find(".list-apr").text().replace("%","")*1);
+    return $(a).find(".list-apr").text().replace("%","")*1 > $(b).find(".list-apr").text().replace("%","")*1 ? -1: 1;
+    })
+ $(".listing").html(divArr)
+}
+setInterval(aaa,20000);
+aaa();
