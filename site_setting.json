@@ -81,6 +81,12 @@
                     "token2":"eth",
                     "type":"farm",
                     "digits":18
+                } ,
+                { "contract":"0x9566fb9e64015612af7077349ed0e4b04fc286fd",
+                    "token1":"0x7f479d78380ad00341fdd7322fe8aef766e29e5a",
+                    "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "type":"farm",
+                    "digits":18
                 } 
 
                 
