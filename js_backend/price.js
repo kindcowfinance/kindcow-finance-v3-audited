@@ -59,6 +59,8 @@ setInterval(function(){
        
         });
         price1['price']["KIND"] = price1['pair']['KIND_BUSD'];
+        //price1['price']["OGC"]  = price1['pair']['KIND_BUSD'];
+       
         
         // console.log(price1);
 
@@ -471,7 +473,10 @@ function tlp(){
                              else
                              if(price1['sym'][setting.pid[a].contract] ==  "WBST" )
                               price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['WBST'] )  ;
-                        
+
+                              else 
+                              if(price1['sym'][setting.pid[a].contract] ==  "OGC" )
+                              price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['OGC'] )  ;
                               else
                               price1['total_lp'][a] = 0;
                 }   

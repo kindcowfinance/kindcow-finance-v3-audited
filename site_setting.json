@@ -118,7 +118,8 @@
     ],
     "price_feed" :[
           ["WBST","bitsten","BST_USDT","USDT"],
-          ["BNB","bitsten","BNB_USDT","USDT"]
+          ["BNB","bitsten","BNB_USDT","USDT"],
+          ["OGC","bitsten","OGC_USDT","USDT"]
     ] 
     
 }
