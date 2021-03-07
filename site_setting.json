@@ -94,6 +94,7 @@
                     "type":"staking",
                     "digits":8
                 }  ,
+                { "contract":"0x0d38be02d322648eb895c6e52d8dc89a6e491c2c",
                     "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
