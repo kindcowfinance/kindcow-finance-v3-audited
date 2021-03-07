@@ -99,12 +99,22 @@
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
                     "digits":18
+                }   ,
+                { "contract":"0xb2ddf7fd2dfb0e03d9d439afc511b9f6b806699d",
+                    "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
+                    "token2":"0xb3810a6768666a977d206d5e916f422331e22777",
+                    "type":"farm",
+                    "digits":18
                 }
+
+
+                
 
                 
                  
     ],
     "list_token" : [
+        ["ORM","0xb3810a6768666a977d206d5e916f422331e22777"],
         ["ORE","0x93d5a19a993d195cfc75acdd736a994428290a59"],
         ["KIND","0xe3ba88c38d2789fe58465020cc0fb60b70c10d32"],
         ["BUSD","0xe9e7cea3dedca5984780bafc599bd69add087d56"],

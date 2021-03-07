@@ -46,9 +46,12 @@ price1['token_lp']['busd']={};
 price1['token_lp']['wbnb']={};
 price1['token_lp']['kind']={};
 price1['token_lp']['wbst']={};
+price1['token_lp']['ore']={};
+
 
 setInterval(function(){
         WALLET.getrate("0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1","KIND_BUSD",8,18);
+        WALLET.getrate("0x0d38be02d322648eb895c6e52d8dc89a6e491c2c","ORE_KIND",10,8);
        
         setting.price_feed.forEach(element => {
             
@@ -59,7 +62,7 @@ setInterval(function(){
        
         });
         price1['price']["KIND"] = price1['pair']['KIND_BUSD'];
-        //price1['price']["OGC"]  = price1['pair']['KIND_BUSD'];
+        price1['price']["ORE"]  = price1['pair']['ORE_KIND']*price1['pair']['KIND_BUSD'];
        
         
         // console.log(price1);
@@ -463,6 +466,10 @@ function tlp(){
                                 else
                         if(price1['token_lp']['kind'][a]>0)
                                 price1['total_lp'][a] =  (price1['token_lp']['kind'][a] * 2 * price1['price']['KIND'] )  ;
+                                else
+                        if(price1['token_lp']['ore'][a]>0)
+                                price1['total_lp'][a] =  (price1['token_lp']['ore'][a] * 2 * price1['price']['ORE'] )  ;
+                        
                         }   
          
                 if(setting.pid[a].type=="staking"){
