@@ -148,6 +148,7 @@ apy();
 
 HANDLE_THIS();
 
+/*
 function aaa(){
 divArr = $(".list-project")
 divArr.sort(function(a, b) {
@@ -158,3 +159,4 @@ divArr.sort(function(a, b) {
 }
 setInterval(aaa,20000);
 aaa();
+*/
