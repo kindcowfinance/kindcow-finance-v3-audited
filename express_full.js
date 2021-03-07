@@ -28,6 +28,7 @@ app.get('/setting.js',function(req,res){
 app.get('/farms',function(req,res){
    var data = Array();
      data['setting']=Array();
+     data['t']=new Date();
      data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
      data["title"] = "Farm Liquidity";
      data["url"] = "Farms";
@@ -39,6 +40,7 @@ app.get('/farms',function(req,res){
  app.get('/',function(req,res){
    var data = Array();
    data['setting']=Array();
+   data['t']=new Date();
    data["title"] = "Home";
    data["url"] = "Home";
    data['setting']['token'] = JSON.parse(JSON.stringify(setting.token));
@@ -48,6 +50,7 @@ app.get('/farms',function(req,res){
 
  app.get('/vote',function(req,res){
   var data = Array();
+  data['t']=new Date();
   data['setting']=Array();
   data["title"] = "Vote";
   data["url"] = "Vote";
@@ -56,6 +59,7 @@ app.get('/farms',function(req,res){
 
 app.get('/single',function(req,res){
    var data = Array();
+   data['t']=new Date();
    data["title"] = "Vote";
    data["url"] = "Vote";
    data["back"] = "vote";
@@ -65,6 +69,7 @@ app.get('/single',function(req,res){
  app.get('/pools',function(req,res){
    var data = Array();
      data['setting']=Array();
+     data['t']=new Date();
      data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
      data["title"] = "Staking token ";
      data["url"] = "Pools";
