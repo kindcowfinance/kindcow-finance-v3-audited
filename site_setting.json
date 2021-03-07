@@ -93,12 +93,18 @@
                     "token2":"",
                     "type":"staking",
                     "digits":8
-                } 
+                }  ,
+                    "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
+                    "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "type":"farm",
+                    "digits":18
+                }
 
                 
                  
     ],
     "list_token" : [
+        ["ORE","0x93d5a19a993d195cfc75acdd736a994428290a59"],
         ["KIND","0xe3ba88c38d2789fe58465020cc0fb60b70c10d32"],
         ["BUSD","0xe9e7cea3dedca5984780bafc599bd69add087d56"],
         ["WBNB","0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"],
