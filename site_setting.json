@@ -105,7 +105,18 @@
                     "token2":"0xb3810a6768666a977d206d5e916f422331e22777",
                     "type":"farm",
                     "digits":18
-                }
+                }  ,  { "contract":"0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":8
+                }  
+                 ,  { "contract":"0x93d5a19a993d195cfc75acdd736a994428290a59",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":10
+                }  
 
 
                 

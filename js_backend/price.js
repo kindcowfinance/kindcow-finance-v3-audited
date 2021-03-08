@@ -486,6 +486,9 @@ function tlp(){
                               else 
                               if(price1['sym'][setting.pid[a].contract] ==  "OGC" )
                               price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['OGC'] )  ;
+                              else 
+                              if(price1['sym'][setting.pid[a].contract] ==  "ORE" )
+                              price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['ORE'] )  ;
                               else
                               price1['total_lp'][a] = 0;
                 }   
