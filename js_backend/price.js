@@ -428,6 +428,7 @@ for(var a=0;a<pid;a++){
         WALLET.getWalletLpBalance('0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',a,'wbnb',setting.pid[a].contract,18);
         WALLET.getWalletLpBalance('0xe3ba88c38d2789fe58465020cc0fb60b70c10d32',a,'kind',setting.pid[a].contract,8);
         WALLET.getWalletLpBalance('0x58d6f302aaf33dd30a7666e16909db3c5c74021b',a,'wbst',setting.pid[a].contract,18);
+        WALLET.getWalletLpBalance('0x93d5a19a993d195cfc75acdd736a994428290a59',a,'ore',setting.pid[a].contract,10);
         }
         else
         {WALLET.getstaking(a);
@@ -436,6 +437,7 @@ for(var a=0;a<pid;a++){
         price1['token_lp']['wbnb'][a] = 0;
         price1['token_lp']['kind'][a] = 0;
         price1['token_lp']['wbst'][a] = 0;
+        price1['token_lp']['ore'][a] = 0;
         //  WALLET.getWalletLpBalance(setting.pid[a].contract,a,'busd',setting.master_contract.contract,18);
         //  WALLET.getWalletLpBalance('0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',a,'wbnb',setting.master_contract.contract,18);
         //  WALLET.getWalletLpBalance('0xe8148de8c8c3441257ce3a093746b37c569a6d3e',a,'kind',setting.master_contract.contract,8);
