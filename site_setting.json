@@ -116,7 +116,20 @@
                     "token2":"",
                     "type":"staking",
                     "digits":10
-                }  
+                }    ,
+                { "contract":"0xe85323d9d8060f2b22d906cc794d02f3604bb4cb",
+                    "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18
+                }   ,
+                { "contract":"0xf4532a11a72e33ab31e602009a81309b3dc4b1ef",
+                    "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "type":"farm",
+                    "digits":18
+                } 
+
 
 
                 
