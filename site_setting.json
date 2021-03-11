@@ -128,6 +128,12 @@
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
                     "digits":18
+                }   ,
+                { "contract":"0x3afdddf142a492f3de0f14b73a900e50a4aecad2",
+                    "token1":"0x376ba3ffac2643555731349fae9fc8ca28e2c9a2",
+                    "token2":"eth",
+                    "type":"farm",
+                    "digits":18
                 } 
 
 
