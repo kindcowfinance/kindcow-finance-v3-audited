@@ -6,6 +6,10 @@ const setting   =   require("./site_setting.json");
 const expressLayouts = require('express-ejs-layouts');
 var price       =   require("./js_backend/price.js");
 
+var timeout = require('connect-timeout');
+
+app.use(timeout('5s'));
+
 //const helmet = require("helmet");
 //app.use(helmet());
 
