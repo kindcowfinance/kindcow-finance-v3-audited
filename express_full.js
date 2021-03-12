@@ -6,8 +6,8 @@ const setting   =   require("./site_setting.json");
 const expressLayouts = require('express-ejs-layouts');
 var price       =   require("./js_backend/price.js");
 
-const helmet = require("helmet");
-app.use(helmet());
+//const helmet = require("helmet");
+//app.use(helmet());
 
 app.use(express.static(__dirname+"/"));
 
