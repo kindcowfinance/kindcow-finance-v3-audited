@@ -1,25 +1,28 @@
 <% layout('../layouts/app') -%>
-<link rel="stylesheet" href="stisla/assets/css/customs/home.css">
+<link rel="stylesheet"
+	href="stisla/assets/css/customs/home.css">
 
-<div class="row mt-5" >
-    <div class="col-12 mb-4">
-        <div class="hero  ">
-          <div class="hero-inner text-center">
-            <h2 class='text-center'>Welcome </h2>
-            <h3 class='text-center'>~ <span id='asset-estimation'>0</span></h3>
-            <span class='mywallet-address logedin'></span> <button class="  btn btn-sm btn-success connect-to-wallet">CONNECT WALLET</button>
-            
-            
-            
-          </div>
-        </div>
-      </div>
+<div class="row mt-5">
+	<div class="col-12 mb-4">
+		<div class="hero  ">
+			<div class="hero-inner text-center">
+				<h2 class='text-center'>Welcome </h2>
+				<h3 class='text-center'>~ <span id='asset-estimation'>0</span></h3>
+				<span class='mywallet-address logedin'></span> <button class="  btn btn-sm btn-success connect-to-wallet">CONNECT WALLET</button>
 
-    <style>
-      .card-body{padding:20px 0px !important}
-    </style>
 
-    <!-- <div class="col-12 mb-4">
+
+			</div>
+		</div>
+	</div>
+
+	<style>
+		.card-body {
+			padding: 20px 0px !important
+		}
+	</style>
+
+	<!-- <div class="col-12 mb-4">
         <div class="hero text-white hero-bg-image hero-bg-parallax" data-background="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-green-blockchain-bitcoin-fintech-banner-image_196943.jpg">
           <div class="hero-inner">
             <h2>Welcome, Ujang!</h2>
@@ -30,7 +33,7 @@
           </div>
         </div>
       </div> -->
- <!--
+	<!--
       <div class="col-md-6">
         <div class="card card-hero">
           <div class="card-header">
@@ -107,32 +110,35 @@
         </div>
       </div>
     -->
-    
-    <div class="col-12 col-12"  >
-      <div class="card card-primary">
-        <div class="card-body text-center">
-          
-          Kind Smart Contract Address<br>
-           <a target='_blank' href='https://bscscan.com/token/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32'>https://bscscan.com/token/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32</a><br><br>
-           Chart<br>
-           <a target='_blank' href='https://goswapp-bsc.web.app/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32'>https://goswapp-bsc.web.app/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32</a>
-          
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-12"  >
-      <div class="card card-primary">
-        <div class="card-body text-center">
-          
-          Claim free first KIND for your new wallet <br>
-           Everyone new Address with 0 KIND able to claim One Time FREE 1 KIND <br>
-           You only need to pay fee network transaction<br>
-           Join telegram group to Update <a target='_blank' href='https://t.me/kindcowfinance'>https://t.me/kindcowfinance</a><br><br>
-          <button class='text-center btn btn-warning btn-sm claim-airdrop'>Claim Free KIND</button>
-        </div>
-      </div>
-    </div>
-<!--
+
+	<div class="col-12 col-12">
+		<div class="card card-primary">
+			<div class="card-body text-center">
+
+				Kind Smart Contract Address<br>
+				<a target='_blank'
+					href='https://bscscan.com/token/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32'>https://bscscan.com/token/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32</a><br><br>
+				Chart<br>
+				<a target='_blank'
+					href='https://goswapp-bsc.web.app/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32'>https://goswapp-bsc.web.app/0xe3ba88c38d2789fe58465020cc0fb60b70c10d32</a>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-12">
+		<div class="card card-primary">
+			<div class="card-body text-center">
+
+				Claim first free KIND for your new wallet.<br>
+				Every new Address with 0 KIND is able to claim 1 FREE KIND. <br>
+				You only need to pay network transaction fee.<br>
+				Join Telegram group to get help with updating to the new audited contract: <a target='_blank'
+					href='https://t.me/kindcowfinance'>https://t.me/kindcowfinance</a><br><br>
+				<button class='text-center btn btn-warning btn-sm claim-airdrop'>Claim Free KIND</button>
+			</div>
+		</div>
+	</div>
+	<!--
     <div class="col-12">
       <div class="card">
        
@@ -159,76 +165,81 @@
     </div>
 
    -->
-      
-      <div class="col-12 col-md-6 col-lg-6">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h4 class='text-center col-12'>KIND on Your wallet</h4>
-          </div>
-          <div class="card-body">
-            <h5 class='text-center col-12 your-wallet-lp-pid-0'>  KIND</h5>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-12 col-md-6 col-lg-6">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h4 class='text-center  col-12'>Total Supply</h4>
-          </div>
-          <div class="card-body">
-            <h5 class='text-center col-12'><span class='supply-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
-          </div>
-        </div>
-      </div>
+	<div class="col-12 col-md-6 col-lg-6">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h4 class='text-center col-12'>KIND on Your wallet</h4>
+			</div>
+			<div class="card-body">
+				<h5 class='text-center col-12 your-wallet-lp-pid-0'> KIND</h5>
+			</div>
+		</div>
+	</div>
 
-
-      <div class="col-md-6 ">
-        <div class="col-12 col-md-12 col-lg-12">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h4 class='text-center col-12'>Reward per Block</h4>
-            </div>
-            <div class="card-body">
-              <h5 class='text-center col-12'>1.1 KIND</h5>
-            </div>
-          </div>
-        </div>
-
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h4 class='text-center  col-12'>Total Burn</h4>
-          </div>
-          <div class="card-body">
-            <h5 class='text-center col-12'><span class='burn-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
-          </div>
-        </div>
-      </div>
+	<div class="col-12 col-md-6 col-lg-6">
+		<div class="card card-primary">
+			<div class="card-header">
+				<h4 class='text-center  col-12'>Total Supply</h4>
+			</div>
+			<div class="card-body">
+				<h5 class='text-center col-12'><span class='supply-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
+			</div>
+		</div>
+	</div>
 
 
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="card card-primary">
-          <div class="card-header">
-            <h4 class='text-center  col-12'>Total Value Locked </h4>
-          </div>
-          <div class="card-body">
-            <h5 class='text-center col-12  '>$  <span class='tvl'>0</span>  </h5>
-          </div>
-        </div>
-      </div>
+	<div class="col-md-6 ">
+		<div class="col-12 col-md-12 col-lg-12">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h4 class='text-center col-12'>Reward per Block</h4>
+				</div>
+				<div class="card-body">
+					<h5 class='text-center col-12'>1.1 KIND</h5>
+				</div>
+			</div>
+		</div>
 
-      </div>
+		<div class="col-12 col-md-12 col-lg-12">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h4 class='text-center  col-12'>Total Burn</h4>
+				</div>
+				<div class="card-body">
+					<h5 class='text-center col-12'><span class='burn-<%=  data.setting.token.contract  %>'>0</span> KIND</h5>
+				</div>
+			</div>
+		</div>
 
-      
 
-      <div class="col-12 col-md-6">
+		<div class="col-12 col-md-12 col-lg-12">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h4 class='text-center  col-12'>Total Value Locked </h4>
+				</div>
+				<div class="card-body">
+					<h5 class='text-center col-12  '>$ <span class='tvl'>0</span> </h5>
+				</div>
+			</div>
+		</div>
 
-      <a class="twitter-timeline" data-tweet-limit='1' href="https://twitter.com/kindcow_finance?ref_src=twsrc%5Etfw">Tweets by kindcow_finance</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+	</div>
 
-      </div>
 
-      
+
+	<div class="col-12 col-md-6">
+
+		<a class="twitter-timeline"
+			data-tweet-limit='1'
+			href="https://twitter.com/kindcow_finance?ref_src=twsrc%5Etfw">Tweets by kindcow_finance</a>
+		<script async
+			src="https://platform.twitter.com/widgets.js"
+			charset="utf-8"></script>
+
+	</div>
+
+
 
 
 </div>
@@ -237,7 +248,7 @@
 
 
 <script>
-  $(document).ready(function(){
- // $("#myModal").modal("show");
-  });
+	$(document).ready(function() {
+		// $("#myModal").modal("show");
+	});
 </script>
