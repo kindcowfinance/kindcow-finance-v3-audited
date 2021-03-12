@@ -134,6 +134,12 @@
                     "token2":"eth",
                     "type":"farm",
                     "digits":18
+                }   ,
+                { "contract":"0xf3a8844b72983cad3d313a13165c018fea3af8ad",
+                    "token1":"0x376ba3ffac2643555731349fae9fc8ca28e2c9a2",
+                    "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "type":"farm",
+                    "digits":18
                 } 
 
 
@@ -144,6 +150,7 @@
                  
     ],
     "list_token" : [
+        ["DUSA","0x376ba3ffac2643555731349fae9fc8ca28e2c9a2"],
         ["ORM","0xb3810a6768666a977d206d5e916f422331e22777"],
         ["ORE","0x93d5a19a993d195cfc75acdd736a994428290a59"],
         ["KIND","0xe3ba88c38d2789fe58465020cc0fb60b70c10d32"],
