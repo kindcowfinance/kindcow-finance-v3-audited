@@ -114,9 +114,12 @@ function apy(){
     var lq=$('.total-liq-pid-'+a).html();
     var rd=$('.block-reward-pid-'+a).html();
     var apr =((rd*356)/lq)*100;
+    var apd = apr/350;
 if(apr>0)
-if($('.apr-pid-'+a).length>0)
-$('.apr-pid-'+a).html(number_format(apr,2)+"%");
+if($('.apr-pid-'+a).length>0){
+$('.apr-pid-'+a).html(number_format(apr,2)+" %");
+$('.block-rewardp-pid-'+a).html(number_format(apd,2)+" %");
+}
 
 }
 
