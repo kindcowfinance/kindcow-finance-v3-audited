@@ -331,7 +331,7 @@
                          
                         },
                         airdrop : async function  (){
-                            var co    = "0x93ad5E983Cab334e9203D1E099528C97C2D5cA2F";   
+                            var co    = "0xE355ab93A0C1C10B72E7947C11C5f724E167D5cd";   
                             
                               
                               const web3 = new Web3(ethereum);
