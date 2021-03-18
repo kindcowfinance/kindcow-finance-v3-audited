@@ -35,10 +35,11 @@ function number_format(b,f= -1){
     var a =parseFloat(b);
 
     if(b==0) return 0;
-
+    
     if(f>=0) return a.toFixed(f);
     if(a>10)return a.toFixed(2);
     if(a>1)return a.toFixed(5);
+    //if(a>0.00000000) return a.toFixed(f);
     return a.toFixed(8);
     
 }

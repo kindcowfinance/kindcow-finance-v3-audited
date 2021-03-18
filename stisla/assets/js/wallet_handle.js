@@ -105,13 +105,13 @@ var HANDLE ={
         if($('.your-lp-pid-'+pid).length>0)
         {   var x=0;
             for(x=0;x<$('.your-lp-pid-'+pid).length;x++) {
-                $('.your-lp-pid-'+pid)[x].innerHTML = number_format(res);
+                $('.your-lp-pid-'+pid)[x].innerHTML = number_format(res,10);
                } 
         } 
         if($('.r-your-lp-pid-'+pid).length>0)
         {   var x=0;
             for(x=0;x<$('.r-your-lp-pid-'+pid).length;x++) {
-                $('.r-your-lp-pid-'+pid)[x].innerHTML =  res;
+                $('.r-your-lp-pid-'+pid)[x].innerHTML =  number_format(res,18);
                } 
         } 
 
@@ -266,11 +266,11 @@ var HANDLE ={
         
         if(document.getElementsByClassName('your-wallet-lp-pid-'+pid).length>0)
         {
-        document.getElementsByClassName('your-wallet-lp-pid-'+pid)[0].innerHTML = number_format(res);
+        document.getElementsByClassName('your-wallet-lp-pid-'+pid)[0].innerHTML = number_format(res,12);
         }
         if(document.getElementsByClassName('r-your-wallet-lp-pid-'+pid).length>0)
         {
-        document.getElementsByClassName('r-your-wallet-lp-pid-'+pid)[0].innerHTML =  res;
+        document.getElementsByClassName('r-your-wallet-lp-pid-'+pid)[0].innerHTML =  number_format(res,18);
         }
 
        // console.log('data' + datas);
