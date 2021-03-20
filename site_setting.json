@@ -2,6 +2,17 @@
                     "name":"KIND",
                     "digits":8
                 },
+                "swap" : ["https://julswap.com/",
+                    "https://exchange.pancakeswap.finance/"
+                ], 
+                "info" : [
+                    "https://julswap.info/",
+                    "https://pancakeswap.info/"
+                ],
+                "website" : [
+                    "Julswap",
+                    "Pancakeswap"
+                ],
     "master_contract":  {  "contract": "0xd57079d80b57cd18a0fad9c7b5af4d39c016d5f5",
                             "name":"NEATHERD",
                             "digits":8
@@ -10,137 +21,177 @@
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":8
+                    "digits":8,
+                    "swap":1
                 },
                 { "contract":"0x58d6f302aaf33dd30a7666e16909db3c5c74021b",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 },{ "contract":"0x4fe89ac612ee309fa9dec1f501495eea44449924",
                     "token1":"0xa94b7a842aadb617a0b08fa744e033c6de2f7595",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":0
+
                 },{ "contract":"0x3557af1c6b0b34767f5ad7fc2b16378f3a4f5dd5",
                     "token1":"0x7f479d78380ad00341fdd7322fe8aef766e29e5a",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 }
                 ,
                 { "contract":"0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1",
                     "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 },
                 { "contract":"0xd00f72d8cc3a07413700ec379ce2df257fc7bc74",
                     "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 },
                 { "contract":"0xa3f00e300858d6eeae2e7f7b85d8932abd2245aa",
                     "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "token2":"0x7979f6c54eba05e18ded44c4f986f49a5de551c2",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 },
                 { "contract":"0x3691826b229d25a0b37d95219c376377e87c8887",
                     "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "token2":"0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 },{ "contract":"0x233242524229b8cea887645746c8849577f88aa2",
                     "token1":"0x58d6f302aaf33dd30a7666e16909db3c5c74021b",
                     "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 },
                 { "contract":"0x1b96b92314c44b159149f7e0303511fb2fc4774f",
                     "token1":"eth",
                     "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 },
                 { "contract":"0x0c1d238998aaca3bffe0a3d44dae1b91f846b29d",
                     "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "token2":"0x2170ed0880ac9a755fd29b2688956bd959f933f8",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 } ,
                 { "contract":"0x65f79963c1681252c41ccfc37660599d01010c1a",
                     "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 } ,
                 { "contract":"0xa71427351503e2413a7204f0328d12e6e710bf2b",
                     "token1":"0xac472d0eed2b8a2f57a6e304ea7ebd8e88d1d36f",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 } ,
                 { "contract":"0x9566fb9e64015612af7077349ed0e4b04fc286fd",
                     "token1":"0x7f479d78380ad00341fdd7322fe8aef766e29e5a",
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 } ,
                 { "contract":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":8
+                    "digits":8,
+                    "swap":1
                 }  ,
                 { "contract":"0x0d38be02d322648eb895c6e52d8dc89a6e491c2c",
                     "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 }   ,
                 { "contract":"0xb2ddf7fd2dfb0e03d9d439afc511b9f6b806699d",
                     "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
                     "token2":"0xb3810a6768666a977d206d5e916f422331e22777",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 }  ,  { "contract":"0x7A9f28EB62C791422Aa23CeAE1dA9C847cBeC9b0",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":8
+                    "digits":8,
+                    "swap":1
                 }  
                  ,  { "contract":"0x93d5a19a993d195cfc75acdd736a994428290a59",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":10
+                    "digits":10,
+                    "swap":1
                 }    ,
                 { "contract":"0xe85323d9d8060f2b22d906cc794d02f3604bb4cb",
                     "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
                     "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 }   ,
                 { "contract":"0xf4532a11a72e33ab31e602009a81309b3dc4b1ef",
                     "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
+
                 }   ,
                 { "contract":"0x3afdddf142a492f3de0f14b73a900e50a4aecad2",
                     "token1":"0x376ba3ffac2643555731349fae9fc8ca28e2c9a2",
                     "token2":"eth",
                     "type":"farm",
-                    "digits":18
+                    "digits":18,
+                    "swap":1
                 }   ,
                 { "contract":"0xf3a8844b72983cad3d313a13165c018fea3af8ad",
                     "token1":"0x376ba3ffac2643555731349fae9fc8ca28e2c9a2",
                     "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
                     "type":"farm",
-                    "digits":18
-                } 
+                    "digits":18,
+                    "swap":1
+                }  ,
+                { "contract":"0xebb77b3414af083e523df915f78df19b7ddd3969",
+                    "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "token2":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":0
+
+                }
 
 
 

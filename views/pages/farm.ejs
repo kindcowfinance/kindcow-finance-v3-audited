@@ -129,17 +129,18 @@
           <div class="col-5 text-left  " style="padding: 0px 10px">Buy  <span class='sym-<%=  data.setting.pid[a].token1  %>'>BEP20</span>
           </div>
           <div class="col-7 text-right text-success " style=" padding: 0px 10px">
-            <strong><a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?inputCurrency=<%=  data.setting.pid[a].token2  %>&outputCurrency=<%=  data.setting.pid[a].token1  %>">Pancakeswap <i class="bi bi-arrow-up-right-square"></i></a></strong>
+            <strong><a target="_blank" href="<%= data.setting.swap[data.setting.pid[a].swap] %>#/swap?inputCurrency=<%=  data.setting.pid[a].token2  %>&outputCurrency=<%=  data.setting.pid[a].token1  %>"><%= data.setting.website[data.setting.pid[a].swap] %> <i class="bi bi-arrow-up-right-square"></i></a></strong>
           </div>
           </div>
         <div class="row font-weight-bold">
           <div class="col-5 text-left  " style="padding: 0px 10px">Get Liquidity
           </div>
           <div class="col-7 text-right text-success " style=" padding: 0px 10px">
-            <strong><a target="_blank" href="https://exchange.pancakeswap.finance/#/add/<%=  data.setting.pid[a].token2  %>/<%=  data.setting.pid[a].token1  %>">Pancakeswap <i class="bi bi-arrow-up-right-square"></i></a></strong>
+            <strong><a target="_blank" href="<%= data.setting.swap[data.setting.pid[a].swap] %>#/add/<%=  data.setting.pid[a].token2  %>/<%=  data.setting.pid[a].token1  %>"><%= data.setting.website[data.setting.pid[a].swap] %> <i class="bi bi-arrow-up-right-square"></i></a></strong>
           </div>
           </div>
           <div class="row font-weight-bold">
+            
             <div class="col-5 text-left  " style="padding: 0px 10px">TVL
             </div>
             <div class="col-7 text-right text-success " style=" padding: 0px 10px">
@@ -185,7 +186,7 @@
               <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal">Close</button>
               <button type="button" style="width: 200px;" class="btn btn-primary approve-withdraw-lp-pid-<%=  a  %>">Confirm</button>
             </div>
-            <div  class='text-center col-12'><a href="https://pancakeswap.info/token/<%=  data.setting.pid[a].contract  %>">get   LP <i
+            <div  class='text-center col-12'><a href="<%= data.setting.info[data.setting.pid[a].swap] %>token/<%=  data.setting.pid[a].contract  %>">get   LP <i
               class="bi bi-arrow-up-right-square"></i></a></p> 
           </div>
           </div>

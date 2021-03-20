@@ -52,7 +52,11 @@ app.get('/farms',function(req,res){
    var data = Array();
      data['setting']=Array();
      data['t']=new Date();
+
+     data['setting']['swap'] =  JSON.parse(JSON.stringify(setting.swap));
+     data['setting']['info'] =  JSON.parse(JSON.stringify(setting.info));
      data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
+     data['setting']['website'] =  JSON.parse(JSON.stringify(setting.website));
      data["title"] = "Farm Liquidity";
      data["url"] = "Farms";
      
