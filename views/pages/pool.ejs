@@ -8,14 +8,15 @@
 <%  if( data.setting.pid[a].type  != "staking") continue; %>
  
   
-    <div class="col-12  col-md-4 col-lg-4 diradius list-project"  id='pid-box-<%=  a  %>'>
+    <div class="col-12  col-md-4 col-lg-4 diradius list-project" id='pid-box-<%=  a  %>' >
       <div class="pricing pricing-highlight">
         <div class="pricing-title">
           Pool / Staking
         </div>
         <div class="card">
           <div class="card-body">
-          <div style=" min-height: 150px">
+           
+          <div style=" min-height: 150px" >
 
    <div class="row font-weight-bold pb-3" style='border-bottom:1px solid #eee;   '>
             <div class="col-4 text-center  "  >
@@ -29,6 +30,12 @@
 
 
 
+          <div  class='text-center' style="padding: 20px 10px;" id='pid-boxh-<%=  a  %>'>
+              This Project PAUSED<br>
+              To Continue receive Reward need minimum 10K AloctPoint <br>
+              Open <a href ="voting">Voting Page</a> to Vote Up
+            </div>
+          <div id='pid-boxs-<%=  a  %>'>
           <h6 class="row" style="margin-top:20px">
 
 
@@ -79,6 +86,7 @@
                 </div>
  
           
+          </div>
           </div>
         
           </div>

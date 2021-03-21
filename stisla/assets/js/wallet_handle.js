@@ -150,7 +150,10 @@ var HANDLE ={
         if ($('.alloc-pid-'+pid).length>0) 
         document.getElementsByClassName('alloc-pid-'+pid)[0].innerHTML = number_format(res[1],0);
         if ($('.block-reward-pid-'+pid).length>0) {
-        if(res[1]<10000)document.getElementById('pid-box-'+pid).style.display="none";
+        if(res[1]<10000)document.getElementById('pid-boxs-'+pid).style.display="none";
+        if(res[1]>=10000)document.getElementById('pid-boxs-'+pid).style.display="";
+        if(res[1]>=10000)document.getElementById('pid-boxh-'+pid).style.display="none";
+        if(res[1]<10000)document.getElementById('pid-boxh-'+pid).style.display="";
         document.getElementsByClassName('block-reward-pid-'+pid)[0].innerHTML = number_format(((res[1]>=10000?res[1]:0)/TOTAL_ALOCT)*tokenprice*28800);
         }
 
