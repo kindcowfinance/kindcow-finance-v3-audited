@@ -36,7 +36,7 @@
                     "token2":"eth",
                     "type":"farm",
                     "digits":18,
-                    "swap":0
+                    "swap":1
 
                 },{ "contract":"0x3557af1c6b0b34767f5ad7fc2b16378f3a4f5dd5",
                     "token1":"0x7f479d78380ad00341fdd7322fe8aef766e29e5a",
@@ -191,8 +191,16 @@
                     "digits":18,
                     "swap":0
 
-                }
+                } ,
+                { "contract":"0xd24d51d70bc802b43af335e9a797af57aad3174e",
+                    "token1":"0xa94b7a842aadb617a0b08fa744e033c6de2f7595",
+                    "token2":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":0
 
+                }
+                
 
 
                 
