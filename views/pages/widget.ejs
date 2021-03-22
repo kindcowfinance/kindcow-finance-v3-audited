@@ -1,0 +1,634 @@
+   <!-- General CSS Files -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+   <script src="setting.js?<%= data.t -%>"></script>
+ <!-- General JS Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="stisla/assets/js/stisla.js"></script>
+<script src="stisla/assets/js/page/bootstrap-modal.js"></script>
+   <!-- CSS Libraries -->
+   <!--
+   <link rel="stylesheet" href="node_modules/jqvmap/dist/jqvmap.min.css">
+   <link rel="stylesheet" href="node_modules/weathericons/css/weather-icons.min.css">
+   <link rel="stylesheet" href="node_modules/weathericons/css/weather-icons-wind.min.css">
+   <link rel="stylesheet" href="node_modules/summernote/dist/summernote-bs4.css">
+   -->
+ 
+   <!-- Template CSS -->
+   <link rel="stylesheet" href="stisla/assets/css/style.css">
+   <link rel="stylesheet" href="stisla/assets/css/components.css">
+
+<link rel="stylesheet" href="stisla/assets/css/customs/farm.css">
+  
+
+<style>
+  .loader {
+  width: 32px;
+  height: 90px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 50% 50% 0 0;
+  border-bottom: 10px solid #FF3D00;
+  background-color: #FFF;
+  background-image: radial-gradient(ellipse at center, #FFF 34%, #FF3D00 35%, #FF3D00 54%, #FFF 55%), linear-gradient(#FF3D00 10px, transparent 0);
+  background-size: 28px 28px;
+  background-position: center 20px , center 2px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: animloaderBack 1s linear infinite alternate;
+}
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0px 15px #FF3D00 inset;
+  top: 67px;
+}
+.loader::after {
+  content: '';  
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 34px;
+  height: 34px;
+  top: 112%;
+  background: radial-gradient(ellipse at center, #ffdf00 8%, rgba(249, 62, 0, 0.6) 24%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50% 50% 0;
+  background-repeat: no-repeat;
+  background-position: -44px -44px;
+  background-size: 100px 100px;
+  box-shadow: 4px 4px 12px 0px rgba(255, 61, 0, 0.5);
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloaderBack {
+  0%, 30%, 70% {
+    transform: translateY(0px);
+  }
+  20%, 40%, 100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 4px 4px 12px 2px rgba(255, 61, 0, 0.75);
+    width: 34px;
+    height: 34px;
+    background-position: -44px -44px;
+    background-size: 100px 100px;
+  }
+  100% {
+    box-shadow: 2px 2px 8px 0px rgba(255, 61, 0, 0.5);
+    width: 30px;
+    height: 28px;
+    background-position: -36px -36px;
+    background-size: 80px 80px;
+  }
+}
+</style>
+ 
+  <div class="row justify-content-center">
+
+
+    <div class="row listing" style='max-width: 1000px ; margin:20px auto;width:98%;max-width: 400px;'>
+
+     
+     
+      
+      <div class="col-12  text-center logedin" style='padding: 10px;'>
+        <div class="d-sm-none d-lg-inline-block mywallet-address" style="padding-right:20px;display:none">0</div><br>
+          <a href="#" class="logout has-icon text-danger ">
+            Logout
+          </a>
+      </div>
+        
+       
+      <% for( var a=0; a <  (data.setting.pid.length) ;  a++ ){ if(a!=data.pid)continue; -%>
+        <%  if( data.setting.pid[a].type  != "staking") continue; %>
+         
+          
+            <div class="col-12  diradius list-project" id='pid-box-<%=  a  %>' >
+              <div class="pricing pricing-highlight">
+                <div class="pricing-title">
+                  Pool / Staking
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                   
+                  <div style=" min-height: 150px" >
+        
+           <div class="row font-weight-bold pb-3" style='border-bottom:1px solid #eee;   '>
+                    <div class="col-4 text-center  "  >
+                      <img src="stisla/assets/img/logo/<%=  data.setting.pid[a].contract  %>.png" width="70px"> 
+                    </div>
+                    <div class="col-8 text-center   " style=" padding: 10px 10px">
+                     <h4>Hold <span class=' sym-<%=  data.setting.pid[a].contract  %>'>TOKEN</span></h4> </div>
+                    </div>
+        
+                 
+        
+        
+        
+                  <div  class='text-center' style="padding: 20px 10px; display:none" id='pid-boxh-<%=  a  %>'>
+                      This Project PAUSED<br>
+                      To Continue receive Reward need minimum 10K AloctPoint <br>
+                      Open <a href ="voting">Voting Page</a> to Vote Up
+                    </div>
+                  <div id='pid-boxs-<%=  a  %>'>
+                  <h6 class="row" style="margin-top:20px">
+        
+        
+        
+        
+                  <div class="col-5 text-left " style="padding: 0px 10px">APR
+                  </div>
+                  <div class="col-7 list-apr  text-right text-right text-success apr-pid-<%=  a  %> " style=" padding: 0px 10px" >
+                 0%
+                  </div>
+                </h6>
+                  
+                  
+                   
+                  <div class="row font-weight-bold">
+                  <div class="col-5 text-left  " style="padding: 0px 10px">Deposit
+                  </div>
+                  <div class="col-7 text-right text-success  sym-<%=  data.setting.pid[a].contract  %>" style=" padding: 0px 10px">
+                  TOKEN </div>
+                  </div>
+                  <div class="row font-weight-bold">
+                  <div class="col-5 text-left  " style="padding: 0px 10px">Reward
+                  </div>
+                  <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                  KIND
+                  </div>
+                  </div>
+                  <div class="row font-weight-bold" style="display:none">
+                    <div class="col-5 text-left  " style="padding: 0px 10px">AllocPoint
+                    </div>
+                    <div class="col-7 text-right text-success alloc-pid-<%=  a  %> " style=" padding: 0px 10px">
+                    0
+                    </div>
+                    </div>
+                    <div class="row font-weight-bold" style='display:none'>
+                      <div class="col-5 text-left  " style="padding: 0px 10px">Daily reward
+                      </div>
+                      <div class="col-7 text-right text-success  " style=" padding: 0px 10px">
+                      $<span class='block-reward-pid-<%=  a  %>'>0</span>
+                      </div>
+                      </div>
+                      <div class="row font-weight-bold" >
+                        <div class="col-5 text-left  " style="padding: 0px 10px">Daily reward
+                        </div>
+                        <div class="col-7 text-right text-success  " style=" padding: 0px 10px">
+                        <span class='block-rewardp-pid-<%=  a  %>'>0</span>
+                        </div>
+                        </div>
+         
+                  
+                  </div>
+                  </div>
+                
+                  </div>
+                  </div>
+         
+                <div class="d-flex mt-2" > 
+                  <div class="col-6 text-center   text-warning "   >
+                    Reward
+                  </div>
+                  <div class="col-6 text-center   text-warning "   >
+                    Your Staking
+                  </div>
+                </div>
+                <div class="d-flex mt-2" > 
+                  <div class="col-6 text-center    "   >
+                    <h6><span class='pending-reward-pid-<%=  a  %>'>0</span></h6>
+                  </div>
+                  <div class="col-6 text-center    "   >
+                    <h6><span class='your-lp-pid-<%=  a  %>'>0</span></h6>
+                  </div>
+                </div>
+                <div  style='border-bottom:1px solid #ddd; display:none; margin:0px  ' class="row mt-2 pb-3 aproved-pid-<%=  a  %>"> 
+                  <div class="col-6 text-center    "   >
+                    <button class="btn btn-sm btn-success get-harvest-pid-<%=  a  %>">HARVEST</button>
+                  </div>
+                  <div class="col-6 text-center    "   >
+                   
+                    <button data-toggle="modal" data-target="#modal-wd-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm wd-liq-pid-<%=  a  %>"><i class="fas fa-minus"></i></button>
+                    <button data-toggle="modal" data-target="#modal-dp-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm dp-liq-pid-<%=  a  %>"><i class="fas fa-plus"></i></button>
+         
+                      
+                  </div>
+                 
+                </div>
+                <div  style='border-bottom:1px solid #ddd; margin:0px   'class="row mt-2 pb-3 non-aproved-pid-<%=  a  %>"> 
+                 
+                  <div  style='display:none' class="col-12 text-center    logedin "   >
+                    <button class="btn btn-sm btn-success btn-block rounded-0 get-approve-pid-<%=  a  %> ">APPROVE CONTRACT</button>
+                  </div>
+                  <div class="col-12 text-center    "   >
+                    <button class="btn btn-sm btn-primary connect-to-wallet rounded-0 btn-block">CONNECT WALLET</button>
+                  </div>
+                </div>
+                  
+         
+               
+                <br>
+                <a onClick="$('.detail<%=  a  %>').toggle();$('.hide<%=  a  %>').toggle()" class="    mb-2 rounded-0 rounded-bottom" data-toggle="collapse" href="#collapseDetail-<%=  a  %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                  <span class='detail<%=  a  %>' >Details</span><span class='hide<%=  a  %>' style='display:none' >Hide</span>
+                </a>
+                <br>
+                <br>
+               
+              <div class="collapse card-content pb-3" id="collapseDetail-<%=  a  %>">
+            
+                
+                <div class="row font-weight-bold">
+                  <div class="col-5 text-left  " style="padding: 0px 10px">Market
+                  </div>
+                  <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                    <strong><a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56&outputCurrency=<%=  data.setting.pid[a].contract  %>">Pancakeswap <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                  </div>
+                  </div>
+                  <div class="row font-weight-bold">
+                    <div class="col-5 text-left  " style="padding: 0px 10px">TVL
+                    </div>
+                    <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                    $ <span class='total-liq-pid-<%=  a  %>'>0</span>
+                    </div>
+                    </div>
+                    <div class="row font-weight-bold">
+                      <div class="col-5 text-left  " style="padding: 0px 10px">Explorer
+                      </div>
+                      <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                        <strong><a target="_blank" href=https://bscscan.com/token/<%=  data.setting.pid[a].contract  %>>Bscscan <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                      </div>
+                      </div>
+           
+              </div>
+              </div>
+        
+              <div class="modal fade" id="modal-wd-pid-<%=  a  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content" style="border-radius: 5%;">
+                    <div class="modal-header">
+                      <h5 class="modal-title col-12" id="exampleModalCenterTitle">Withdraw <span class=' sym-<%=  data.setting.pid[a].contract  %>'>TOKEN</span>  <span class='float-right your-lp-pid-<%=  a  %>'>0</span></h5>
+                      <span class='d-none r-your-lp-pid-<%=  a  %>'>0</span>
+                    </div>
+                    <div class="modal-body pb-0">
+                      <div class=" ">
+                       
+                        <div class="d-flex">
+                          <input  type="text" class="form-control mr-2 col-10 text-center amount-withdraw-lp-pid-<%=  a  %> " placeholder="0" name="" id="">
+                         
+                           <button class="btn btn-sm rounded-0 col-2  btn-success" style="width: 80px;border-radius:20%" onclick="$('.amount-withdraw-lp-pid-<%=  a  %>').val($('.r-your-lp-pid-<%=  a  %>').html())">MAX</button>
+                        
+            
+                          
+                        </div>
+                        <div class="d-flex pt-2" >
+                          <input type="range" class="form-range col-12 roda-wd-<%=  a  %>" style='padding: 0px;' id="">
+                        </div>
+                        
+                      </div>
+                    
+                    </div>
+                    <div class="modal-footer" style="justify-content: center;">
+                      <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal">Close</button>
+                      <button type="button" style="width: 200px;" class="btn btn-primary approve-withdraw-lp-pid-<%=  a  %>">Confirm</button>
+                    </div>
+                    <div  class='text-center col-12'><a href="https://pancakeswap.info/token/<%=  data.setting.pid[a].contract  %>">get    <span class=' sym-<%=  data.setting.pid[a].contract  %>'>TOKEN</span>  <i
+                      class="bi bi-arrow-up-right-square"></i></a></p> 
+                  </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="modal fade" id="modal-dp-pid-<%=  a  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content" style="border-radius: 5%;">
+                    <div class="modal-header">
+                      <h5 class="modal-title col-12" id="exampleModalCenterTitle">Deposit <span class=' sym-<%=  data.setting.pid[a].contract  %>'>TOKEN</span>  <span class='float-right your-wallet-lp-pid-<%=  a  %>'>0</span> </h5>
+                      <span class='d-none  r-your-wallet-lp-pid-<%=  a  %> resetform'>0</span>
+                    </div>
+                    <div class="modal-body pb-0">
+                      <div class=" ">
+                       
+                        <div class="d-flex">
+                          <input  type="text" class="form-control mr-2 col-10 text-center amount-deposit-lp-pid-<%=  a  %>" placeholder="0" name="" id="">
+                          <button class="btn btn-sm rounded-0 col-2  btn-success" style="width: 80px;border-radius:20%" onclick="$('.amount-deposit-lp-pid-<%=  a  %>').val($('.r-your-wallet-lp-pid-<%=  a  %>').html())">MAX</button>
+                        
+            
+                          
+                        </div>
+                        <div class="d-flex pt-2" >
+                          <input type="range" class="form-range col-12 roda-dp-<%=  a  %>" style='padding: 0px;' id="">
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    <div class="modal-footer" style="justify-content: center;">
+                      <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal">Close</button>
+                      <button type="button" style="width: 200px;" class="btn btn-primary approve-deposit-lp-pid-<%=  a  %>">Confirm</button>
+                      
+                    </div>
+                    <div  class='text-center col-12'><a href="https://pancakeswap.info/token/<%=  data.setting.pid[a].contract  %>">get    <span class=' sym-<%=  data.setting.pid[a].contract  %>'>TOKEN</span>  <i
+                      class="bi bi-arrow-up-right-square"></i></a></p></div>
+                      </div>
+                      </div>
+                      </div>
+                      
+            </div>
+           
+           
+          <% } %>
+
+  
+      <% for( var a=0; a <  (data.setting.pid.length) ;  a++ ){ if(a!=data.pid)continue; -%>
+      <%  if( data.setting.pid[a].type  != "farm") continue; %>
+       
+        
+          <div class="col-12   diradius list-project" id='pid-box-<%=  a  %>'>
+            <div class="pricing pricing-highlight">
+              <div class="pricing-title">
+                LP Farming
+              </div>
+              <div class="card">
+                <div class="card-body">
+                <div style=" min-height: 150px">
+                <h5 class="card-title text-center"><img src="stisla/assets/img/logo/<%=  data.setting.pid[a].token1  %>.png" width="40px">
+                   <span class='sym-<%=  data.setting.pid[a].token1  %>'>BEP20</span> - <span class='sym-<%=  data.setting.pid[a].token2  %>'>BEP20</span>
+                   <img src="stisla/assets/img/logo/<%=  data.setting.pid[a].token2 %>.png"  width="40px"> </h5>
+      
+                   <div  class='text-center' style="padding: 5px 10px; display:none" id='pid-boxh-<%=  a  %>'>
+                    This Project PAUSED<br>
+                    To Continue receive Reward need minimum 10K AloctPoint <br>
+                    Open <a href ="voting">Voting Page</a> to Vote Up
+                  </div>
+                <div id='pid-boxs-<%=  a  %>'>
+                <h6 class="row" style="margin-top:20px">
+                <div class="col-5 text-left " style="padding: 0px 10px">APR
+                </div>
+                <div class="col-7  text-right text-right text-success list-apr apr-pid-<%=  a  %> " style=" padding: 0px 10px" >
+                0%
+                </div>
+              </h6>
+                
+                
+            
+                <div class="row font-weight-bold">
+                <div class="col-5 text-left  " style="padding: 0px 10px">Deposit
+                </div>
+                <div class="col-7 text-right text-success  name-<%=  data.setting.pid[a].contract  %>" style=" padding: 0px 10px">
+                TOKEN </div>
+                </div>
+                <div class="row font-weight-bold">
+                <div class="col-5 text-left  " style="padding: 0px 10px">Reward
+                </div>
+                <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                KIND
+                </div>
+                </div>
+                <div class="row font-weight-bold" style="display:none">
+                  <div class="col-5 text-left  " style="padding: 0px 10px">AllocPoint
+                  </div>
+                  <div class="col-7 text-right text-success alloc-pid-<%=  a  %> " style=" padding: 0px 10px">
+                  0
+                  </div>
+                  </div>
+                  <div class="row font-weight-bold" style='display:none'>
+                    <div class="col-5 text-left  " style="padding: 0px 10px">Daily reward
+                    </div>
+                    <div class="col-7 text-right text-success  " style=" padding: 0px 10px">
+                    $<span class='block-reward-pid-<%=  a  %>'>0</span>
+                    </div>
+                    </div>
+      
+                    <div class="row font-weight-bold" >
+                      <div class="col-5 text-left  " style="padding: 0px 10px">Daily reward
+                      </div>
+                      <div class="col-7 text-right text-success  " style=" padding: 0px 10px">
+                      <span class='block-rewardp-pid-<%=  a  %>'>0</span> 
+                      </div>
+                      </div>
+       
+                
+                </div>
+               </div>
+                </div>
+                </div>
+       
+              <div class="d-flex mt-2" > 
+                <div class="col-6 text-center   text-warning "   >
+                  Reward
+                </div>
+                <div class="col-6 text-center   text-warning "   >
+                  Your LP
+                </div>
+              </div>
+              <div class="d-flex mt-2" > 
+                <div class="col-6 text-center    "   >
+                  <h6><span class='pending-reward-pid-<%=  a  %>'>0</span></h6>
+                </div>
+                <div class="col-6 text-center    "   >
+                  <h6><span class='your-lp-pid-<%=  a  %>'>0</span></h6>
+                </div>
+              </div>
+      
+      
+              <div  style='border-bottom:1px solid #ddd; display:none; margin:0px  ' class="row mt-2 pb-3 aproved-pid-<%=  a  %>"> 
+                <div class="col-6 text-center    "   >
+                  <button class="btn btn-sm btn-success get-harvest-pid-<%=  a  %>">HARVEST</button>
+                </div>
+                <div class="col-6 text-center    "   >
+                 
+                  <button data-toggle="modal" data-target="#modal-wd-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm wd-liq-pid-<%=  a  %>"><i class="fas fa-minus"></i></button>
+                  <button data-toggle="modal" data-target="#modal-dp-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm dp-liq-pid-<%=  a  %>"><i class="fas fa-plus"></i></button>
+       
+                    
+                </div>
+               
+              </div>
+      
+              <div  style='border-bottom:1px solid #ddd; margin:0px' class="row mt-2 pb-3 non-aproved-pid-<%=  a  %>"> 
+               
+                <div  style='display:none' class="col-12 text-center    logedin "   >
+                  <button class="btn btn-sm btn-success btn-block rounded-0 get-approve-pid-<%=  a  %> ">APPROVE CONTRACT</button>
+                </div>
+                <div class="col-12 text-center">
+                  <button class="btn btn-sm btn-primary connect-to-wallet rounded-0 btn-block">CONNECT WALLET</button>
+                </div>
+      
+              </div>
+                
+       
+             
+              <br>
+              <a onClick="$('.detail<%=  a  %>').toggle();$('.hide<%=  a  %>').toggle()" class="    mb-2 rounded-0 rounded-bottom" data-toggle="collapse" href="#collapseDetail-<%=  a  %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <span class='detail<%=  a  %>' >Details</span><span class='hide<%=  a  %>' style='display:none' >Hide</span>
+              </a>
+              <br>
+              <br>
+             
+            <div class="collapse card-content pb-3" id="collapseDetail-<%=  a  %>">
+          
+              <div class="row font-weight-bold">
+                <div class="col-5 text-left  " style="padding: 0px 10px">Buy  <span class='sym-<%=  data.setting.pid[a].token1  %>'>BEP20</span>
+                </div>
+                <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                  <strong><a target="_blank" href="<%= data.setting.swap[data.setting.pid[a].swap] %>#/swap?inputCurrency=<%=  data.setting.pid[a].token2  %>&outputCurrency=<%=  data.setting.pid[a].token1  %>"><%= data.setting.website[data.setting.pid[a].swap] %> <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                </div>
+                </div>
+              <div class="row font-weight-bold">
+                <div class="col-5 text-left  " style="padding: 0px 10px">Get Liquidity
+                </div>
+                <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                  <strong><a target="_blank" href="<%= data.setting.swap[data.setting.pid[a].swap] %>#/add/<%=  data.setting.pid[a].token2  %>/<%=  data.setting.pid[a].token1  %>"><%= data.setting.website[data.setting.pid[a].swap] %> <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                </div>
+                </div>
+                <div class="row font-weight-bold">
+                  
+                  <div class="col-5 text-left  " style="padding: 0px 10px">TVL
+                  </div>
+                  <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                  $ <span class='total-liq-pid-<%=  a  %>'>0</span>
+                  </div>
+                  </div>
+                  <div class="row font-weight-bold">
+                    <div class="col-5 text-left  " style="padding: 0px 10px">Explorer
+                    </div>
+                    <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                      <strong><a target="_blank" href=https://bscscan.com/address/<%=  data.setting.pid[a].contract  %>>Bscscan <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                    </div>
+                    </div>
+         
+            </div>
+            </div>
+            <div class="modal fade" id="modal-wd-pid-<%=  a  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="border-radius: 5%;">
+                  <div class="modal-header">
+                    <h5 class="modal-title col-12" id="exampleModalCenterTitle">Withdraw LP  <span class='float-right your-lp-pid-<%=  a  %>'>0</span></h5>
+                    <span class='d-none r-your-lp-pid-<%=  a  %>'>0</span>
+                    
+                  </div>
+                  <div class="modal-body pb-0">
+                    <div class=" ">
+                     
+                      <div class="d-flex">
+                        <input  type="text" class="form-control mr-2 col-10 text-center amount-withdraw-lp-pid-<%=  a  %> " placeholder="0" name="" id="">
+                        <button class="btn btn-sm rounded-0 col-2  btn-success" style="width: 80px;border-radius:20%" onclick="$('.amount-withdraw-lp-pid-<%=  a  %>').val($('.r-your-lp-pid-<%=  a  %>').html())">MAX</button>
+                      
+          
+                        
+                      </div>
+                      <div class="d-flex pt-2" >
+                        <input type="range" class="form-range col-12 roda-wd-<%=  a  %>" style='padding: 0px;'  id="">
+                      </div>
+                      
+                    </div>
+                  
+                  </div>
+                  <div class="modal-footer" style="justify-content: center;">
+                    <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal">Close</button>
+                    <button type="button" style="width: 200px;" class="btn btn-primary approve-withdraw-lp-pid-<%=  a  %>">Confirm</button>
+                  </div>
+                  <div  class='text-center col-12'><a href="<%= data.setting.info[data.setting.pid[a].swap] %>token/<%=  data.setting.pid[a].contract  %>">get   LP <i
+                    class="bi bi-arrow-up-right-square"></i></a></p> 
+                </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal fade" id="modal-dp-pid-<%=  a  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="border-radius: 5%;">
+                  <div class="modal-header">
+                    <h5 class="modal-title col-12" id="exampleModalCenterTitle">Deposit LP  <span class='float-right your-wallet-lp-pid-<%=  a  %>'>0</span> </h5>
+                    <span class='d-none  r-your-wallet-lp-pid-<%=  a  %>'>0</span>
+                  </div>
+                  <div class="modal-body pb-0">
+                    <div class=" ">
+                     
+                      <div class="d-flex">
+                        <input  type="text" class="form-control mr-2 col-10 text-center amount-deposit-lp-pid-<%=  a  %>" placeholder="0" name="" id="">
+                         <button class="btn btn-sm rounded-0 col-2  btn-success" style="width: 80px;border-radius:20%" onclick="$('.amount-deposit-lp-pid-<%=  a  %>').val($('.r-your-wallet-lp-pid-<%=  a  %>').html())">MAX</button>
+                      
+          
+                        
+                      </div>
+                      <div class="d-flex pt-2" >
+                        <input type="range" class="form-range col-12 roda-dp-<%=  a  %>" style='padding: 0px;' id="">
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  <div class="modal-footer" style="justify-content: center;">
+                    <button type="button" style="width: 200px;" class="btn btn-warning" data-dismiss="modal" >Close</button>
+                    <button type="button" style="width: 200px;" class="btn btn-primary approve-deposit-lp-pid-<%=  a  %>">Confirm</button>
+                    
+                  </div>
+                  <div  class='text-center col-12'><a href="https://pancakeswap.info/token/<%=  data.setting.pid[a].contract  %>">get   LP <i
+                    class="bi bi-arrow-up-right-square"></i></a></p></div>
+                    </div>
+                    </div>
+                    </div>
+          </div>
+         
+         
+        <% } %>
+      
+        <div  class='text-center col-12'>
+        <a href='https://kindcow.finance'>kindcow.finance</a>
+        </a>
+      </div>
+
+</div>
+
+<div class="d-none" id="warp-loader" style="position: fixed;top: 0; left: 0; right: 0; bottom: 0;z-index: 9999;background-color: rgba(0,0,0,0.5);padding-top: 20%;">
+  <div class="text-center" style="padding: 20px;background-color: aquamarine;margin: 0 auto;max-width: 400px;border-radius: 25px;">
+    <span class="loader"></span>
+    <h4 class="text-center mt-5">Waiting Confirmation...</h4>
+    <button class="btn btn-sm btn-warning mt-2" onclick='$(this).parent().parent().hide()'>Close</button>
+  </div>
+</div>
+<!-- Template JS File -->
+<script src="stisla/assets/js/scripts.js"></script>
+<script src="stisla/assets/js/function.js"></script>
+<script src="stisla/assets/js/custom.js"></script>
+<script src="stisla/assets/js/button_handle.js"></script>
+<script src="stisla/assets/js/wallet_conect.js"></script>
+<script src="stisla/assets/js/wallet_handle.js"></script>
+<script src="stisla/assets/js/user_state.js"></script>
+<script src="stisla/assets/js/scan_userbalance.js"></script>
+<script>
+  // $('.toast').toast('show');
+  function toast(title, body){
+    $('.toast').toast('show');
+    document.getElementById('toast-content-header').innerHTML = title;
+    document.getElementById("toast-content-body").innerHTML = body;
+  }
+
+  function showLoader(){
+    $('#warp-loader').removeClass('d-none');
+  }
+  function hideLoader(){
+    $('#warp-loader').addClass('d-none');
+  }
+</script>

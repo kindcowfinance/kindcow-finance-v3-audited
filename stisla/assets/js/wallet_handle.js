@@ -166,7 +166,7 @@ var HANDLE ={
             <td>'+pid+'</td>\
             <td><a target="_blank" href="https://bscscan.com/token/'+res[0]+'">'+res[0].substring(0,5)+"***"+res[0].substring(res[0].length-5)+'</td>\
             <td><span class="sym-'+setting.pid[pid].token1.toLowerCase()+'"></span> - <span class="sym-'+setting.pid[pid].token2.toLowerCase()+'">-</span></td>\
-            <td class="name-'+res[0].toLowerCase()+'">???</td>\
+            <td><a href="widget?id='+pid+'" target="_blank"><span class="name-'+res[0].toLowerCase()+'">???</span></a></td>\
             <td class="align-middle">'+res[1]+'</td>\
             <td  class="text-center">\
             <div class="input-group mb-3">\
@@ -187,7 +187,7 @@ var HANDLE ={
             <td>'+pid+'</td>\
             <td><a target="_blank"  href="https://bscscan.com/token/'+res[0]+'">'+res[0].substring(0,5)+"***"+res[0].substring(res[0].length-5)+'</td>\
             <td><span class="sym-'+setting.pid[pid].token1.toLowerCase()+'"></span> - <span class="sym-'+setting.pid[pid].token2.toLowerCase()+'">-</span></td>\
-            <td class="name-'+res[0].toLowerCase()+'">???</td>\
+            <td><a href="widget?id='+pid+'" target="_blank"><span class="name-'+res[0].toLowerCase()+'">???</span></a></td>\
             <td class="align-middle">'+res[1]+'</td>\
             <td class="text-center" >\
             <div class="input-group mb-3">\

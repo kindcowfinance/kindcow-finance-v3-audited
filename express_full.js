@@ -84,13 +84,20 @@ app.get('/farms',function(req,res){
    res.render('pages/vote',{'data' : data});
 });
 
-app.get('/single',function(req,res){
-   var data = Array();
-   data['t']=new Date();
-   data["title"] = "Vote";
-   data["url"] = "Vote";
-   data["back"] = "vote";
-    res.render('pages/single',{'data' : data});
+app.get('/widget',function(req,res){
+  var data = Array();
+  var pid  = req.query.id;
+  data['setting']=Array();
+  data['t']=new Date();
+
+  data['setting']['swap'] =  JSON.parse(JSON.stringify(setting.swap));
+  data['setting']['info'] =  JSON.parse(JSON.stringify(setting.info));
+  data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
+  data['setting']['website'] =  JSON.parse(JSON.stringify(setting.website));
+  data["title"] = "Farm Liquidity";
+  data["url"] = "Farms";
+  data['pid']=pid;
+    res.render('pages/widget',{'data' : data});
  });
 
  app.get('/pools',function(req,res){
