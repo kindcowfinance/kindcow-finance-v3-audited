@@ -144,7 +144,7 @@
                     "token1":"",
                     "token2":"",
                     "type":"staking",
-                    "digits":8,
+                    "digits":18,
                     "swap":1
                 }  
                  ,  { "contract":"0x93d5a19a993d195cfc75acdd736a994428290a59",

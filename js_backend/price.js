@@ -47,11 +47,13 @@ price1['token_lp']['wbnb']={};
 price1['token_lp']['kind']={};
 price1['token_lp']['wbst']={};
 price1['token_lp']['ore']={};
+price1['token_lp']['watch']={};
 
 
 setInterval(function(){
         WALLET.getrate("0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1","KIND_BUSD",8,18);
         WALLET.getrate("0x0d38be02d322648eb895c6e52d8dc89a6e491c2c","ORE_KIND",10,8);
+        WALLET.getrate("0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b","WATCH_BNB",18,18);
        
         setting.price_feed.forEach(element => {
             
@@ -63,7 +65,7 @@ setInterval(function(){
         });
         price1['price']["KIND"] = price1['pair']['KIND_BUSD'];
         price1['price']["ORE"]  = price1['pair']['ORE_KIND']*price1['pair']['KIND_BUSD'];
-       
+        price1['price']["WATCH"]  = price1['pair']['WATCH_BNB']*price1['price']['BNB'];
         
         // console.log(price1);
 
@@ -429,6 +431,7 @@ for(var a=0;a<pid;a++){
         WALLET.getWalletLpBalance('0xe3ba88c38d2789fe58465020cc0fb60b70c10d32',a,'kind',setting.pid[a].contract,8);
         WALLET.getWalletLpBalance('0x58d6f302aaf33dd30a7666e16909db3c5c74021b',a,'wbst',setting.pid[a].contract,18);
         WALLET.getWalletLpBalance('0x93d5a19a993d195cfc75acdd736a994428290a59',a,'ore',setting.pid[a].contract,10);
+        WALLET.getWalletLpBalance('0x7a9f28eb62c791422aa23ceae1da9c847cbec9b0',a,'watch',setting.pid[a].contract,18);
         }
         else
         {WALLET.getstaking(a);
@@ -438,6 +441,7 @@ for(var a=0;a<pid;a++){
         price1['token_lp']['kind'][a] = 0;
         price1['token_lp']['wbst'][a] = 0;
         price1['token_lp']['ore'][a] = 0;
+        price1['token_lp']['watch'][a] = 0;
         //  WALLET.getWalletLpBalance(setting.pid[a].contract,a,'busd',setting.master_contract.contract,18);
         //  WALLET.getWalletLpBalance('0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',a,'wbnb',setting.master_contract.contract,18);
         //  WALLET.getWalletLpBalance('0xe8148de8c8c3441257ce3a093746b37c569a6d3e',a,'kind',setting.master_contract.contract,8);
@@ -472,7 +476,7 @@ function tlp(){
                         if(price1['token_lp']['ore'][a]>0)
                                 price1['total_lp'][a] =  (price1['token_lp']['ore'][a] * 2 * price1['price']['ORE'] )  ;
                         
-                        }   
+                        }  
          
                 if(setting.pid[a].type=="staking"){
                         
@@ -489,6 +493,9 @@ function tlp(){
                               else 
                               if(price1['sym'][setting.pid[a].contract] ==  "ORE" )
                               price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['ORE'] )  ;
+                              else
+                              if(price1['sym'][setting.pid[a].contract] ==  "WATCH" )
+                              price1['total_lp'][a] =  (price1['lp'][a]  * price1['price']['WATCH'] )  ;
                               else
                               price1['total_lp'][a] = 0;
                 }   
