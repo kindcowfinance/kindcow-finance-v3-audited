@@ -110,6 +110,16 @@ app.get('/widget',function(req,res){
      
     res.render('pages/pool',{'data' :   data });
  });
+ app.get('/king',function(req,res){
+  var data = Array();
+    data['setting']=Array();
+    data['t']=new Date();
+    data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
+    data["title"] = "King Cow";
+    data["url"] = "King Cow";
+    
+   res.render('pages/king',{'data' :   data });
+});
 
  app.get('/price',function(req,res){
    res.setHeader('Content-Type', 'application/json');

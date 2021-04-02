@@ -622,7 +622,33 @@
                                  // console.log("err",err)
                               });
                              
-                            }
+                            },
+                            getKing : async function  (){
+                              var co    = "0x1892bd4071E1f9c0Df839FE63Ed361e226122344";   
+                              
+                                
+                                const web3 = new Web3(ethereum);
+                                var abi =[{"inputs":[{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"swap","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+                                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                                var fr = accounts[0];
+                                var  contract = new web3.eth.Contract(abi, co);
+                                var am = $("#convert-to-king-value").val()*1;
+                                var tx = {
+                                    from: fr,
+                                    to: co,
+                                    data: contract.methods.swap(am).encodeABI() 
+                                    
+                                };
+                                web3.eth.sendTransaction(tx).then(res => {
+                                    //console.log("res",res);
+                                   // HANDLE.VoteUp(pid,res);
+                                   //hideLoader();
+                                  // WALLET.getPoolInfo(pid);
+                                }).catch(err => {
+                                   // console.log("err",err)
+                                });
+                               
+                              }
             
             
             
