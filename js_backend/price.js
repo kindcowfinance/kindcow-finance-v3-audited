@@ -51,6 +51,7 @@ price1['token_lp']['watch']={};
 price1['token_lp']['whirl']={};
 
 setInterval(function(){
+  WALLET.getrate("0x1b96b92314c44b159149f7e0303511fb2fc4774f","BNB_BUSD",18,18);
         WALLET.getrate("0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1","KIND_BUSD",8,18);
         WALLET.getrate("0x0d38be02d322648eb895c6e52d8dc89a6e491c2c","ORE_KIND",10,8);
         WALLET.getrate("0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b","WATCH_BNB",18,18);
@@ -66,6 +67,7 @@ setInterval(function(){
         if(element[1]=="bitsten")price1['price'][element[0]]=bitsten[element[2]];
        
         });
+        price1['price']["BNB"] = price1['pair']['BNB_BUSD'];
         price1['price']["KIND"] = price1['pair']['KIND_BUSD'];
         price1['price']["ORE"]  = price1['pair']['ORE_KIND']*price1['pair']['KIND_BUSD'];
         price1['price']["WATCH"]  = price1['pair']['WATCH_BNB']*price1['price']['BNB'];
