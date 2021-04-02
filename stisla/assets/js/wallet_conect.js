@@ -649,7 +649,66 @@
                                 });
                                
                               }
-            
+            ,reqSwapk : async function (){
+
+              var contract    =  "0xe3ba88c38d2789fe58465020cc0fb60b70c10d32";  //
+              const web3 = new Web3(ethereum);
+               
+                var abi   =[{
+                  "inputs": [{
+                      "internalType": "address",
+                      "name": "owner",
+                      "type": "address"
+                  }, {
+                      "internalType": "address",
+                      "name": "spender",
+                      "type": "address"
+                  }],
+                  "name": "allowance",
+                  "outputs": [{
+                      "internalType": "uint256",
+                      "name": "",
+                      "type": "uint256"
+                  }],
+                  "stateMutability": "view",
+                  "type": "function"
+              }];
+              const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+              var fr = accounts[0];
+              var  contract4 = new web3.eth.Contract(abi, contract);
+      
+               
+              await   contract4.methods.allowance(fr,"0x1892bd4071E1f9c0Df839FE63Ed361e226122344").call().then(function(resp) {
+                  
+                  if(resp>999999999)  {
+                        $('.approve-swapk').hide();
+                        //  HANDLE.Approve(pid,pid); 
+                      return  true; }
+                  else
+                  {
+                  var co    = "0xe3ba88c38d2789fe58465020cc0fb60b70c10d32";  //liq
+                  var to    = "0x1892bd4071E1f9c0Df839FE63Ed361e226122344";  //mc
+                  var abi =[
+                  {"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},
+                  ]; 
+                  const web3 = new Web3(ethereum);
+                  //const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                  //const account = accounts[0];
+                  var  contract = new web3.eth.Contract(abi, co);
+                  var amn="115792089237316195423570985008687907853269984665640564039457584007913129639935";
+                  contract.methods.approve(to, amn).send({from:  fr}, 
+                  function(err, transactionHash) {
+                    $('.approve-swapk').hide();
+                  //console.log(transactionHash);
+                  //HANDLE.Approve(pid,transactionHash);
+                  return true;
+                  });
+                  }
+              });
+      
+              
+              }
+               
             
             
             
