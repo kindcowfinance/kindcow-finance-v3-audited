@@ -215,6 +215,14 @@
                     "digits":18,
                     "swap":1
 
+                },
+                { "contract":"0x5ff2716cd0f704f04984dccb584a9da5b23584be",
+                    "token1":"",
+                    "token2":"",
+                    "type":"staking",
+                    "digits":8,
+                    "swap":1
+
                 }
 
 
