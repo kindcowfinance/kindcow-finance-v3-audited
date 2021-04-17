@@ -121,6 +121,17 @@ app.get('/widget',function(req,res){
    res.render('pages/king',{'data' :   data });
 });
 
+app.get('/affiliate',function(req,res){
+  var data = Array();
+    data['setting']=Array();
+    data['t']=new Date();
+    data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
+    data["title"] = "Affiliate";
+    data["url"] = "Affiliate";
+    
+   res.render('pages/affiliate',{'data' :   data });
+});
+
  app.get('/price',function(req,res){
    res.setHeader('Content-Type', 'application/json');
    //console.log(price)
