@@ -128,5 +128,14 @@ app.get('/widget',function(req,res){
  });
 
 
+ app.get('/id/:id',function(req,res){
+  res.setHeader('Content-Type', 'application/json');
+  //console.log()
+  //console.log(price)
+  res.cookie("up",req.params.id);
+  res.send(req.params.id);
+});
+
+
 
 app.listen(port, () => console.info(`App listen on port ${port}`));
