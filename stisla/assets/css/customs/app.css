@@ -13,3 +13,11 @@
 .main-sidebar .sidebar-menu li a {
     height: 30px;
 }
+
+@media (max-width: 767.98px){
+.main-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100% !important;
+}
+}
