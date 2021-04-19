@@ -8,7 +8,83 @@
  </div>
 
  <div class="col-12 text-center">
-   Cooming Soon
+ 
+<h5 class='text-center'>Your ID</h5> 
+<p class='text-center'><span id='aff-id'>0</span></p><br> 
 </div>
 
+<div class="col-12 col-12"  >
+   <div class="card card-primary">
+     <div class="card-body text-center">
+       
+     
+        Your affiliate link<br><span id='link-aff' class='text-success'>https://kindcow.finance/id/{your_id}</span><br><br>
+        Invite your friend to farming / staking and earn when your refferal harvest <br>4% from reff Level 1  + 1% from reff  level 2 
+       
+     </div>
+   </div>
+ </div>
+
+
+ 
+
+
+<div class="col-12">
+   <div class="card">
+     <div class="card-header" style="display: flex;justify-content: space-between;">
+      
+       <div class="card-header-action">
+       <h4>Your Reward : <span id = "ref-reward" >0</span> KIND</h4> 
+       </div>
+      
+
+
+     </div>
+     <div class="card-body p-0">
+       <div class="table-responsive">
+         <table class="table table-striped" id="sortable-table2">
+           <thead>
+             <tr>
+               <th>Addr</th>
+               <th class='text-right'>Harvest</th>
+            
+             </tr>
+           </thead>
+           <tbody>
+             
+           </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
+
+
+
+
 </div>
+
+
+
+<div id='box-aff' style='position:fixed;top:0;left:0;right:0;bottom:0;background: rgba(37, 36, 36, 0.897);padding-top:100px;z-index: 100;display:none'>
+  
+   <div style='background: #fff;width:300px;margin:20px auto;padding:30px 10px' class='text-center'>
+     <h5>Affiliate</h5><br>
+   <div class="input-group mb-3" >
+ 
+     <input id="upline" type="text" class="form-control text-center" placeholder="Uppline ID" aria-label="" aria-describedby="basic-addon1" style="width:100px"><br>
+     
+     </div>
+     <div class="input-group mb-3 text-center d-flex justify-content-center"  >
+ 
+       <button class="btn btn-outline-danger " style=" margin-right:10px" onclick='$("#box-aff").hide()' type="button">Close</button> 
+       <button class="btn btn-outline-primary " onclick='save_upline()' type="button">Confirm</button>
+       
+       </div>
+     
+     Ask UPPLINE ID to your friend!<br>
+     <span class='text-danger' id='err'></span>
+   </div>
+ 
+ 
+ </div>
+ 

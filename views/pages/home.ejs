@@ -260,6 +260,29 @@
 
 </div>
 
+<div id='box-aff' style='position:fixed;top:0;left:0;right:0;bottom:0;background: rgba(37, 36, 36, 0.897);padding-top:100px;z-index: 100;display:none'>
+  
+  <div style='background: #fff;width:300px;margin:20px auto;padding:30px 10px' class='text-center'>
+    <h5>Affiliate</h5><br>
+  <div class="input-group mb-3" >
+
+    <input id="upline" type="text" class="form-control text-center" placeholder="Uppline ID" aria-label="" aria-describedby="basic-addon1" style="width:100px"><br>
+    
+    </div>
+    <div class="input-group mb-3 text-center d-flex justify-content-center"  >
+
+      <button class="btn btn-outline-danger " style=" margin-right:10px" onclick='$("#box-aff").hide()' type="button">Close</button> 
+      <button class="btn btn-outline-primary " onclick='save_upline()' type="button">Confirm</button>
+      
+      </div>
+    
+    Ask UPPLINE ID to your friend!<br>
+    <span class='text-danger' id='err'></span>
+  </div>
+
+
+</div>
+
 
 
 

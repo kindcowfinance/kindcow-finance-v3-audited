@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 p, ul:not(.list-unstyled), ol {
-  line-height: 28px; }
+  line-height: 24px; }
 
 .shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); }

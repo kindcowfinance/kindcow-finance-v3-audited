@@ -110,6 +110,18 @@ app.get('/widget',function(req,res){
      
     res.render('pages/pool',{'data' :   data });
  });
+
+ app.get('/staking',function(req,res){
+  var data = Array();
+    data['setting']=Array();
+    data['t']=new Date();
+    data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
+    data["title"] = "Staking $KIND get other Token ";
+    data["url"] = "Staking";
+    
+   res.render('pages/staking',{'data' :   data });
+});
+
  app.get('/king',function(req,res){
   var data = Array();
     data['setting']=Array();
