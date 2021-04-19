@@ -30,9 +30,11 @@ $.get(urlapi, function(data, status){
     run_aff=0;
     regis=1;
     document.getElementById('box-aff').style.display="none";
-    }} else 
+    }} else {
+      run_aff=0;
     
     register();
+    }
     
 });
    }
@@ -173,6 +175,7 @@ function myaff(){
 
 
       }else{
+        doneaff=1;
       //console.log(data.err);
       //document.getElementById('err').innerHTML = data.err;
       //document.getElementById('box-aff').style.display="";
