@@ -114,9 +114,13 @@ app.get('/widget',function(req,res){
  app.get('/staking',function(req,res){
   var data = Array();
     data['setting']=Array();
+    data['stakinginfo']=JSON.parse(JSON.stringify(price.stakinginfo));
+    data['stakinglen'] = price.stakingLen;
+
+    //console.log(data['stakinginfo']);
     data['t']=new Date();
     data['setting']['pid'] =  JSON.parse(JSON.stringify(setting.pid));
-    data["title"] = "Staking $KIND get other Token ";
+    data["title"] = "Staking Token  ";
     data["url"] = "Staking";
     
    res.render('pages/staking',{'data' :   data });

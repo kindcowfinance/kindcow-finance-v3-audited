@@ -15,6 +15,7 @@ var classApproveDeposit = Array();
 var classApproveWithdraw = Array();
 var classRodaDeposit = Array();
 var classRodaWithdraw = Array();
+var classApproveStaking=Array();
 
 var HANDLE_THIS = function(){
 
@@ -35,6 +36,7 @@ var HANDLE_THIS = function(){
   classApproveWithdraw = Array();
     classRodaDeposit = Array();
     classRodaWithdraw = Array();
+    classApproveStaking=Array();
   
 
 var allElements = document.querySelectorAll('*');
@@ -56,6 +58,7 @@ for (var i = 0; i < allElements.length; i++) {
       if (cls.indexOf("wd-liq-pid") >= 0)classWdLiq.push(cls);
       if (cls.indexOf("dp-liq-pid") >= 0)classDpLiq.push(cls);
       if (cls.indexOf("get-approve-pid") >= 0)classApprove.push(cls);
+      if (cls.indexOf("get-approve-staking-pid") >= 0)classApproveStaking.push(cls);
       if (cls.indexOf("total-liq-pid") >= 0)classTotalLiq.push(cls);
       if (cls.indexOf("approve-deposit-lp-pid") >= 0)classApproveDeposit.push(cls);
       if (cls.indexOf("approve-withdraw-lp-pid") >= 0)classApproveWithdraw.push(cls);
@@ -97,6 +100,16 @@ var walletConnector = document.querySelectorAll('.connect-to-wallet');
     loading(event.target);
         WALLET.logout();
       });
+
+//approve
+classApproveStaking.forEach(function(a){
+  //console.log(a);
+
+  document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
+      loading(event.target);
+      WALLET.reqApproveStaking(a.replace("get-approve-staking-pid-",""));
+    });
+})
 
 
 //approve

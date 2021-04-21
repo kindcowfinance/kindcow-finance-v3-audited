@@ -97,6 +97,67 @@
 
         
         },
+        
+
+       reqApproveStaking : async function (addr){
+
+        var contract    =  addr;  //
+        var mmc = "0x7d3D79A56893DF046Aa37fFe7CdfcB1965348fAc";
+        const web3 = new Web3(ethereum);
+         
+          var abi   =[{
+            "inputs": [{
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }, {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            }],
+            "name": "allowance",
+            "outputs": [{
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }],
+            "stateMutability": "view",
+            "type": "function"
+        }];
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        var fr = accounts[0];
+        var  contract4 = new web3.eth.Contract(abi, contract);
+
+         
+        await   contract4.methods.allowance(fr,mmc).call().then(function(resp) {
+            //console.log(resp);
+            if(resp>999999999)  {
+                HANDLE.Allowance(pid,999999999);
+                  //  HANDLE.Approve(pid,pid); 
+                return  true; }
+            else
+            {
+            var co    = addr;  //liq
+            var to    = mmc;  //mc
+            var abi =[
+            {"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},
+            ]; 
+            const web3 = new Web3(ethereum);
+            //const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            //const account = accounts[0];
+            var  contract = new web3.eth.Contract(abi, co);
+            var amn="115792089237316195423570985008687907853269984665640564039457584007913129639935";
+            contract.methods.approve(to, amn).send({from:  fr}, 
+            function(err, transactionHash) {
+            //console.log(transactionHash);
+            HANDLE.Approve(pid,transactionHash);
+            return true;
+            });
+            }
+        });
+
+        
+        },
        
         reqDeposit : async function (pid,am){
             var co    = MasterContract;  
@@ -708,10 +769,7 @@
       
               
               }
-               
-            
-            
-            
+              
             
             
             
