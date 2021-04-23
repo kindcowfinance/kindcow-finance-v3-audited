@@ -6,6 +6,7 @@ var classVoteUp   =  Array();
 var classAlloc    = Array();
 var classPendingReward = Array();
 var classGetHarvest = Array();
+var classGetHarvestS = Array();
 var classYourLP      = Array();
 var classWdLiq      = Array();
 var classDpLiq      = Array();
@@ -29,6 +30,7 @@ var HANDLE_THIS = function(){
   classAlloc    = Array();
   classPendingReward = Array();
   classGetHarvest = Array();
+  classGetHarvestS = Array();
   classYourLP      = Array();
   classWdLiq      = Array();
   classDpLiq      = Array();
@@ -60,6 +62,7 @@ for (var i = 0; i < allElements.length; i++) {
       if (cls.indexOf("pending-reward-pid") >= 0)classPendingReward.push(cls);
       if (cls.indexOf("your-lp-pid") >= 0)classYourLP.push(cls);
       if (cls.indexOf("get-harvest-pid") >= 0)classGetHarvest.push(cls);
+      if (cls.indexOf("get-harvest-staking-pid") >= 0)classGetHarvestS.push(cls);
       if (cls.indexOf("wd-liq-pid") >= 0)classWdLiq.push(cls);
       if (cls.indexOf("dp-liq-pid") >= 0)classDpLiq.push(cls);
       if (cls.indexOf("get-approve-pid") >= 0)classApprove.push(cls);
@@ -154,6 +157,16 @@ classGetHarvest.forEach(function(a){
       loading(event.target);
       showLoader();
       WALLET.reqDeposit(a.replace("get-harvest-pid-","")*1,0);
+    });
+})
+
+//approve
+classGetHarvestS.forEach(function(a){
+  
+  document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
+      loading(event.target);
+      showLoader();
+      WALLET.reqDepositS(a.replace("get-harvest-staking-pid-","")*1,0);
     });
 })
 

@@ -216,7 +216,7 @@
               var  contract = new web3.eth.Contract(abid, KindContract);
               await  contract.methods.decimals().call().then(function(resp) {
                   
-             WALLET.WithdrawS(Spid,am*(10**resp))
+             WALLET.WithdrawS(pid,am*(10**resp))
                
   
               });
