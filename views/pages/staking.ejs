@@ -171,12 +171,19 @@
           
               
               <div class="row font-weight-bold">
-                <div class="col-5 text-left  " style="padding: 0px 10px">Market
+                <div class="col-5 text-left  " style="padding: 0px 10px">Market <span class='sym-<%=  data.stakinginfo[a][0].toLowerCase() %>'>Token</span>
                 </div>
                 <div class="col-7 text-right text-success " style=" padding: 0px 10px">
                   <strong><a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=<%=  data.stakinginfo[a][0].toLowerCase()  %>">Pancakeswap <i class="bi bi-arrow-up-right-square"></i></a></strong>
                 </div>
                 </div>
+                <div class="row font-weight-bold">
+                  <div class="col-5 text-left  " style="padding: 0px 10px">Market <span class='sym-<%=  data.stakinginfo[a][1].toLowerCase() %>'>Token</span>
+                  </div>
+                  <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                    <strong><a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=<%=  data.stakinginfo[a][1].toLowerCase()  %>">Pancakeswap <i class="bi bi-arrow-up-right-square"></i></a></strong>
+                  </div>
+                  </div>
                 <div class="row font-weight-bold">
                   <div class="col-5 text-left  " style="padding: 0px 10px">Locked
                   </div>
