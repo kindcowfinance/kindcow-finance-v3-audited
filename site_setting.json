@@ -3,7 +3,7 @@
                     "digits":8
                 },
                 "swap" : ["https://julswap.com/",
-                    "https://exchange.pancakeswap.finance/", "https://exchange.pancakeswap.finance/"
+                    "https://v1exchange.pancakeswap.finance/", "https://exchange.pancakeswap.finance/"
                 ], 
                 "info" : [
                     "https://julswap.info/",
