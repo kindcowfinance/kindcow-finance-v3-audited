@@ -1,6 +1,12 @@
 <% layout('../layouts/app') -%>
 <link rel="stylesheet" href="stisla/assets/css/customs/farm.css">
-  
+<style>
+  .swap1-1{display:none;}
+  .swap-2{display:none;}
+  .swap-0{display:none;}
+ 
+  .swapb-1{background: rgb(230, 191, 19);}
+</style>
  
   <div class="row listing" style='max-width: 1000px ; margin:20px auto;'>
   
@@ -9,11 +15,11 @@
  
   
     <div class="col-12  col-md-4 col-lg-4 diradius list-project" id='pid-box-<%=  a  %>'>
-      <div class="pricing pricing-highlight">
-        <div class="pricing-title">
+      <div class="pricing pricing-highlight  ">
+        <div class="pricing-title ">
           LP Farming
         </div>
-        <div class="card">
+        <div class="card ">
           <div class="card-body">
           <div style=" min-height: 150px">
           <h5 class="card-title text-center"><img src="stisla/assets/img/logo/<%=  data.setting.pid[a].token1  %>.png" width="40px">
@@ -25,7 +31,12 @@
               To Continue receive Reward need minimum 10K AloctPoint <br>
               Open <a href ="vote">Voting Page</a> to Vote Up
             </div>
-          <div id='pid-boxs-<%=  a  %>'>
+
+            <div   style="padding: 5px 10px;  " class='text-center swap-<%=  data.setting.pid[a].swap  %>'>
+              This OLD Pancakeswap LP<br>
+              Pancake swap move to new Contract , please remove all LP and move to new pancakeswap LP <br>
+            </div>
+          <div id='pid-boxs-<%=  a  %>' class='swap1-<%=  data.setting.pid[a].swap  %>'>
           <h6 class="row" style="margin-top:20px">
           <div class="col-5 text-left " style="padding: 0px 10px">APR
           </div>
@@ -103,7 +114,7 @@
           <div class="col-6 text-center    "   >
            
             <button data-toggle="modal" data-target="#modal-wd-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm wd-liq-pid-<%=  a  %>"><i class="fas fa-minus"></i></button>
-            <button data-toggle="modal" data-target="#modal-dp-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm dp-liq-pid-<%=  a  %>"><i class="fas fa-plus"></i></button>
+            <button data-toggle="modal" data-target="#modal-dp-pid-<%=  a  %>" data-backdrop="false" href="#!" class="btn btn-icon btn-info btn-sm dp-liq-pid-<%=  a  %> swap1-<%=  data.setting.pid[a].swap  %>"><i class="fas fa-plus"></i></button>
  
               
           </div>
@@ -130,7 +141,7 @@
         <br>
         <br>
        
-      <div class="collapse card-content pb-3" id="collapseDetail-<%=  a  %>">
+      <div class="collapse card-content pb-3 swap1-<%=  data.setting.pid[a].swap  %>" id="collapseDetail-<%=  a  %>">
     
         <div class="row font-weight-bold">
           <div class="col-5 text-left  " style="padding: 0px 10px">Buy  <span class='sym-<%=  data.setting.pid[a].token1  %>'>BEP20</span>

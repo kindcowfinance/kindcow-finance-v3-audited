@@ -14,6 +14,16 @@ function checkApproved(w){
         document.getElementsByClassName('non-aproved-pid-'+pid)[0].style.display = 'none';
         document.getElementsByClassName('aproved-pid-'+pid)[0].style.display = '';
         }
+    });
+    classApproveStaking.forEach(function(a){
+        var pid = a.replace("get-approve-staking-pid-","");
+        var cokiname = w +"-approve-staking-pid-"+pid  ; 
+        console.log(cokiname);
+        if(getCookie(cokiname)=="true"){
+        document.getElementsByClassName('get-approve-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('aproved-staking-pid-'+pid)[0].style.display = '';
+        }
     })
 }
 

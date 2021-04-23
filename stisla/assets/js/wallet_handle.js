@@ -91,6 +91,54 @@ var HANDLE ={
 
         
     },
+    ApproveStaking : function (pid,res) {
+
+        if(res.length==66){
+        
+        console.log(res);
+        document.getElementsByClassName('get-approve-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('aproved-staking-pid-'+pid)[0].style.display = '';
+
+        var wallet = getCookie("current-wallet");
+        setCookie(wallet+"-approve-staking-pid-"+pid,"true");
+        toast('title',res);
+        }
+
+
+        
+    },PendingRewardS : function (pid,res) {
+
+        
+        if($('.pending-reward-staking-pid-'+pid).length>0)
+        {
+        document.getElementsByClassName('pending-reward-staking-pid-'+pid)[0].innerHTML = number_format(res);
+        }
+        
+    },
+    BalanceLPS : function (pid,res) {
+        
+        if($('.your-lp-staking-pid-'+pid).length>0)
+        {   var x=0;
+            for(x=0;x<$('.your-lp-staking-pid-'+pid).length;x++) {
+                $('.your-lp-staking-pid-'+pid)[x].innerHTML = number_format(res,8);
+               } 
+        } 
+        if($('.r-your-lp-staking-pid-'+pid).length>0)
+        {   var x=0;
+            for(x=0;x<$('.r-your-lp-staking-pid-'+pid).length;x++) {
+                $('.r-your-lp-staking-pid-'+pid)[x].innerHTML =  number_format(res,8);
+               } 
+        } 
+
+
+        //global(pid,res);
+
+         
+         
+       
+        
+    },
     PendingReward : function (pid,res) {
 
         
@@ -135,6 +183,21 @@ var HANDLE ={
 
         var wallet = getCookie("current-wallet");
         setCookie(wallet+"-approve-pid-"+pid,"true");
+        //console.log(res);
+        }
+        
+    },
+    AllowanceStaking : function (pid,res) {
+        if(res>=999999999){
+        if ($('.get-approve-staking-pid-'+pid).length>0) 
+        document.getElementsByClassName('get-approve-staking-pid-'+pid)[0].style.display = 'none';
+        if ($('.non-aproved-staking-pid-'+pid).length>0) 
+        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[0].style.display = 'none';
+        if ($('.aproved-staking-pid-'+pid).length>0) 
+        document.getElementsByClassName('aproved-staking-pid-'+pid)[0].style.display = '';
+
+        var wallet = getCookie("current-wallet");
+        setCookie(wallet+"-approve-staking-pid-"+pid,"true");
         //console.log(res);
         }
         

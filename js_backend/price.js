@@ -28,6 +28,7 @@ bitsten_feed();
 var price1 = {}; 
 price1['stakinginfo']={};
 price1['price']={};
+price1['priceid']={}
 price1['pair']={};
 price1['lp']={};
 price1['global_lp']={};
@@ -51,6 +52,17 @@ price1['token_lp']['ore']={};
 price1['token_lp']['watch']={};
 price1['token_lp']['whirl']={};
 price1['token_lp']['cow']={};
+
+function arrayprice(){
+  setting.list_token.forEach(e => {
+
+    console.log(e);
+    price1['priceid'][e[1]]=price1['price'][e[0]];
+    //price1['contract'][e[0]]=e[1];
+
+  });
+}
+arrayprice();
 
 setInterval(function(){
   WALLET.getrate("0x1b96b92314c44b159149f7e0303511fb2fc4774f","BNB_BUSD",18,18);
@@ -79,7 +91,10 @@ setInterval(function(){
         price1['price']["OGC"]  = price1['pair']['OGC_BUSD'];
         price1['price']["COW"]  = price1['pair']['COW_BUSD'];
         price1['price']["WHIRL"]  = price1['pair']['WHIRL_BNB']*price1['price']['BNB'];
-        
+
+
+    
+        arrayprice();
         
         // console.log(price1);
 

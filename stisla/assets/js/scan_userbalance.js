@@ -8,6 +8,7 @@ var a = 0;
 allpid.forEach(b => {
  WALLET.getBalanceLP(a); 
  WALLET.getPendingReward(a); 
+
  //WALLET.getPoolInfo(a);
  WALLET.getWalletLpBalance(a);
  //WALLET.totalSupply(setting.token.contract);
@@ -16,6 +17,10 @@ allpid.forEach(b => {
 
 a++;
 
+
+
+
+
 });
 
 
@@ -23,6 +28,9 @@ a++;
 
 setInterval(lp,10000);
 lp();
+
+
+
 
 // WALLET.getPoolLength();
 // WALLET.getRewardPool();
@@ -72,6 +80,45 @@ function rate(){
           }
 
 
+          for (const [a, value] of Object.entries(data.stakinginfo)) {
+            
+            WALLET.getPendingRewardS(a);
+            WALLET.getBalanceLPS(a);
+
+
+            if($('.total-liq-staking-pid-'+a).length>0)
+                {   
+                //console.log(value);
+                var v = value[6]/(10**8);
+                var r = data.priceid[value[0].toLowerCase()];
+
+                
+
+                document.getElementsByClassName('total-liq-staking-pid-'+a)[0].innerHTML = number_format(v*r);
+                }
+
+
+
+
+                if($('.total-liq-staking-pid-'+a).length>0){
+                    var lq=$('.total-liq-staking-pid-'+a).html();
+                    var rd=$('.block-reward-staking-pid-'+a).html();
+                    rd = rd * 20 * 60 * 60 * 24 * r;
+                    var apr =((rd*356)/lq)*100;
+                    var apd = apr/350;
+                
+                
+                if(apr>0)
+                if($('.apr-staking-pid-'+a).length>0){
+                $('.apr-staking-pid-'+a).html(number_format(apr,2)+" %");
+                $('.block-rewardp-staking-pid-'+a).html(number_format(apd,2)+" %");
+                }
+                }
+
+ 
+          }
+
+
          
 for (const [a, value] of Object.entries(data.poolinfo)) {
 HANDLE.PoolInfoVote(a, value);
@@ -106,11 +153,7 @@ function apy(){
     var a=0;
     
  allpid.forEach(b => {
-
-   
- 
     if($('.total-liq-pid-'+a).length>0){
-    
     var lq=$('.total-liq-pid-'+a).html();
     var rd=$('.block-reward-pid-'+a).html();
     var apr =((rd*356)/lq)*100;
@@ -120,26 +163,17 @@ if($('.apr-pid-'+a).length>0){
 $('.apr-pid-'+a).html(number_format(apr,2)+" %");
 $('.block-rewardp-pid-'+a).html(number_format(apd,2)+" %");
 }
-
 }
-
-
-
-
-
 a++;
  });
+}
+
+setInterval(apy,5000);
+apy();
 
 
 
  
-}
-
-
-
-
-setInterval(apy,5000);
-apy();
 
 
 

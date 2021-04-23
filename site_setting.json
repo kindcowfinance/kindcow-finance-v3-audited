@@ -3,14 +3,15 @@
                     "digits":8
                 },
                 "swap" : ["https://julswap.com/",
-                    "https://exchange.pancakeswap.finance/"
+                    "https://exchange.pancakeswap.finance/", "https://exchange.pancakeswap.finance/"
                 ], 
                 "info" : [
                     "https://julswap.info/",
-                    "https://pancakeswap.info/"
+                    "https://pancakeswap.info/", "https://pancakeswap.info/"
                 ],
                 "website" : [
                     "Julswap",
+                    "Pcs (OLD)",
                     "Pancakeswap"
                 ],
     "master_contract":  {  "contract": "0xd57079d80b57cd18a0fad9c7b5af4d39c016d5f5",
@@ -22,14 +23,14 @@
                     "token2":"",
                     "type":"staking",
                     "digits":8,
-                    "swap":1
+                    "swap":2
                 },
                 { "contract":"0x58d6f302aaf33dd30a7666e16909db3c5c74021b",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
                     "digits":18,
-                    "swap":1
+                    "swap":2
 
                 },{ "contract":"0x4fe89ac612ee309fa9dec1f501495eea44449924",
                     "token1":"0xa94b7a842aadb617a0b08fa744e033c6de2f7595",
@@ -124,7 +125,7 @@
                     "token2":"",
                     "type":"staking",
                     "digits":8,
-                    "swap":1
+                    "swap":2
                 }  ,
                 { "contract":"0x0d38be02d322648eb895c6e52d8dc89a6e491c2c",
                     "token1":"0x93d5a19a993d195cfc75acdd736a994428290a59",
@@ -145,14 +146,14 @@
                     "token2":"",
                     "type":"staking",
                     "digits":18,
-                    "swap":1
+                    "swap":2
                 }  
                  ,  { "contract":"0x93d5a19a993d195cfc75acdd736a994428290a59",
                     "token1":"",
                     "token2":"",
                     "type":"staking",
                     "digits":10,
-                    "swap":1
+                    "swap":2
                 }    ,
                 { "contract":"0xe85323d9d8060f2b22d906cc794d02f3604bb4cb",
                     "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
@@ -205,7 +206,7 @@
                     "token2":"",
                     "type":"staking",
                     "digits":18,
-                    "swap":1
+                    "swap":2
 
                 },
                 { "contract":"0xfa122859b899d2692fa31ce8033448dfbfd6e6ec",
@@ -221,9 +222,17 @@
                     "token2":"",
                     "type":"staking",
                     "digits":8,
-                    "swap":1
+                    "swap":2
+
+                },{ "contract":"0x93b4623e411fd0392f0ed966dc141594c4caa067",
+                    "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "token2":"eth",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":2
 
                 }
+                
 
 
                 

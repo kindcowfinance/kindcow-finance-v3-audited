@@ -1,5 +1,6 @@
 
  var MasterContract = setting.master_contract.contract;
+ var MasterStaking  = "0x7d3D79A56893DF046Aa37fFe7CdfcB1965348fAc";
   
  
   
@@ -132,7 +133,7 @@
         await   contract4.methods.allowance(fr,mmc).call().then(function(resp) {
             //console.log(resp);
             if(resp>999999999)  {
-                HANDLE.Allowance(pid,999999999);
+                HANDLE.AllowanceStaking(addr,999999999);
                   //  HANDLE.Approve(pid,pid); 
                 return  true; }
             else
@@ -150,7 +151,7 @@
             contract.methods.approve(to, amn).send({from:  fr}, 
             function(err, transactionHash) {
             //console.log(transactionHash);
-            HANDLE.Approve(pid,transactionHash);
+            HANDLE.ApproveStaking(addr,transactionHash);
             return true;
             });
             }
@@ -356,6 +357,49 @@
                       });
                      
                     },
+                    WithdrawS : async function  (pid,am){
+                      var co    = MasterStaking;   
+                      var digit = 18;
+                        
+                        const web3 = new Web3(ethereum);
+                      
+                        var abi =[{
+                          "inputs": [{
+                              "internalType": "uint256",
+                              "name": "_pid",
+                              "type": "uint256"
+                          }, {
+                              "internalType": "uint256",
+                              "name": "_amount",
+                              "type": "uint256"
+                          }],
+                          "name": "withdraw",
+                          "outputs": [],
+                          "stateMutability": "nonpayable",
+                          "type": "function"
+                      }];
+                         
+                         
+                        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                        var fr = accounts[0];
+                        var  contract = new web3.eth.Contract(abi, co);
+                        var amn =  BigInt(am)  ; amn+="";
+                        var tx = {
+                            from: fr,
+                            to: co,
+                            data: contract.methods.withdraw(pid, amn).encodeABI() 
+                            
+                        };
+                        web3.eth.sendTransaction(tx).then(res => {
+                            //console.log("res",res);
+                            hideLoader();
+                            HANDLE.Withdraw(pid,res);
+                            WALLET.getBalanceLP(pid);
+                        }).catch(err => {
+                           // console.log("err",err)
+                        });
+                       
+                      },
                     voteDown : async function  (pid,am){
                         var co    = MasterContract;   
                         var am = $("#vote-val-pid-"+pid).val();
@@ -510,6 +554,49 @@
                   var  contract = new web3.eth.Contract(abi, co);
                 await contract.methods.balanceLP(pid,fr).call().then(function(resp) {
                  HANDLE.BalanceLP(pid,resp / Math.pow(10,digit));
+                });
+              } catch (error) {
+              
+              }
+            },
+            
+
+            getPendingRewardS : async function(pid){
+              if(WALLET.walletConect()){} else return;
+                var co    = MasterStaking;  //
+                var digit = 8 ;
+                const web3 = new Web3(ethereum);
+                 
+                  var abi   =[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"EmergencyWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[{"internalType":"contract IERC20","name":"_tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"_tokenReward","type":"address"},{"internalType":"uint256","name":"_rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"_decimal","type":"uint256"},{"internalType":"uint256","name":"_startBlock","type":"uint256"}],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"balanceLP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"emergencyWithdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"massUpdatePools","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"pendingReward","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"tokenReward","type":"address"},{"internalType":"uint256","name":"rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"decimal","type":"uint256"},{"internalType":"uint256","name":"startBlock","type":"uint256"},{"internalType":"uint256","name":"accPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"},{"internalType":"uint256","name":"rewardAvailable","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"poolLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"updatePool","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"updateRewardPerBlock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"address","name":"","type":"address"}],"name":"userInfo","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"rewardDebt","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+
+                  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                  var fr = accounts[0];
+                  var  contract = new web3.eth.Contract(abi, co);
+                   
+                  await  contract.methods.pendingReward(pid,fr).call().then(function(resp) {
+                   
+                 //  console.log(resp); // This will output "OK Computer"
+                    //return (resp / Math.pow(10,digit));
+                    HANDLE.PendingRewardS(pid,resp / Math.pow(10,digit));
+                });
+            },
+            getBalanceLPS : async function(pid){
+               if(WALLET.walletConect()){} else return;
+                var co    = MasterStaking;  //
+                var digit = 8 ;
+
+                
+                const web3 = new Web3(ethereum);
+                 
+                  var abi   =[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"EmergencyWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[{"internalType":"contract IERC20","name":"_tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"_tokenReward","type":"address"},{"internalType":"uint256","name":"_rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"_decimal","type":"uint256"},{"internalType":"uint256","name":"_startBlock","type":"uint256"}],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"balanceLP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"emergencyWithdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"massUpdatePools","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"pendingReward","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"tokenReward","type":"address"},{"internalType":"uint256","name":"rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"decimal","type":"uint256"},{"internalType":"uint256","name":"startBlock","type":"uint256"},{"internalType":"uint256","name":"accPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"},{"internalType":"uint256","name":"rewardAvailable","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"poolLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"updatePool","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"updateRewardPerBlock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"address","name":"","type":"address"}],"name":"userInfo","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"rewardDebt","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+
+                try {
+                  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                  var fr = accounts[0];
+                  var  contract = new web3.eth.Contract(abi, co);
+                await contract.methods.balanceLP(pid,fr).call().then(function(resp) {
+                 
+                 HANDLE.BalanceLPS(pid,resp / Math.pow(10,digit));
                 });
               } catch (error) {
               
