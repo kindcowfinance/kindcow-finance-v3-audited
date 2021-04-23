@@ -118,10 +118,17 @@ var walletConnector = document.querySelectorAll('.connect-to-wallet');
 classApproveStaking.forEach(function(a){
   //console.log(a);
 
-  document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
+
+  for(var b=0;b<document.querySelectorAll("."+a).length;b++){
+  document.querySelectorAll("."+a)[b].addEventListener('click', function(event) {
       loading(event.target);
+      //console.log(a.replace("get-approve-staking-pid-",""));
       WALLET.reqApproveStaking(a.replace("get-approve-staking-pid-",""));
     });
+  }
+
+
+
 })
 
 

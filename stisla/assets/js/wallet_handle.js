@@ -94,15 +94,18 @@ var HANDLE ={
     ApproveStaking : function (pid,res) {
 
         if(res.length==66){
-        
-        console.log(res);
-        document.getElementsByClassName('get-approve-staking-pid-'+pid)[0].style.display = 'none';
-        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[0].style.display = 'none';
-        document.getElementsByClassName('aproved-staking-pid-'+pid)[0].style.display = '';
+       
+       
+        for(var b=0;b<document.getElementsByClassName('get-approve-staking-pid-'+pid).length;b++){
+           
+        document.getElementsByClassName('get-approve-staking-pid-'+pid)[b].style.display = 'none';
+        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[b].style.display = 'none';
+        document.getElementsByClassName('aproved-staking-pid-'+pid)[b].style.display = '';
 
         var wallet = getCookie("current-wallet");
         setCookie(wallet+"-approve-staking-pid-"+pid,"true");
         toast('title',res);
+        }
         }
 
 
@@ -188,18 +191,28 @@ var HANDLE ={
         
     },
     AllowanceStaking : function (pid,res) {
+
+        console.log(res);
         if(res>=999999999){
+  console.log("SSSS");
+            for(var b=0;b<document.getElementsByClassName('get-approve-staking-pid-'+pid).length;b++){
+           
+              
+
+
         if ($('.get-approve-staking-pid-'+pid).length>0) 
-        document.getElementsByClassName('get-approve-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('get-approve-staking-pid-'+pid)[b].style.display = 'none';
         if ($('.non-aproved-staking-pid-'+pid).length>0) 
-        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[0].style.display = 'none';
+        document.getElementsByClassName('non-aproved-staking-pid-'+pid)[b].style.display = 'none';
         if ($('.aproved-staking-pid-'+pid).length>0) 
-        document.getElementsByClassName('aproved-staking-pid-'+pid)[0].style.display = '';
+        document.getElementsByClassName('aproved-staking-pid-'+pid)[b].style.display = '';
 
         var wallet = getCookie("current-wallet");
         setCookie(wallet+"-approve-staking-pid-"+pid,"true");
         //console.log(res);
         }
+
+    }
         
     },
     Metamask : function (res) {

@@ -82,7 +82,7 @@ function rate(){
 
           for (const [a, value] of Object.entries(data.stakinginfo)) {
             
-            WALLET.getPendingRewardS(a);
+            WALLET.getPendingRewardS(a,data.stakinginfo[a][3]);
             WALLET.getBalanceLPS(a);
             WALLET.getWalletLpBalanceS(a,data.stakinginfo[a][0]);
 
