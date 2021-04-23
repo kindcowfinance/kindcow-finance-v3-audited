@@ -1,4 +1,21 @@
 <% layout('../layouts/app') -%>
+
+
+<% function number_format(b,f= -1){ -%>
+
+  <% var a =parseFloat(b); -%>
+
+  <% if(b==0) return 0; -%>
+  
+  <% if(f>=0) return a.toFixed(f); -%>
+  <% if(a>10)return a.toFixed(2); -%>
+  <% if(a>1)return a.toFixed(5); -%>
+  //if(a>0.00000000) return a.toFixed(f); -%>
+  <% return a.toFixed(8); -%>
+  
+  <% } -%>
+
+
 <link rel="stylesheet" href="stisla/assets/css/customs/farm.css">
   
  
@@ -161,10 +178,10 @@
                 </div>
                 </div>
                 <div class="row font-weight-bold">
-                  <div class="col-5 text-left  " style="padding: 0px 10px">Token Locked
+                  <div class="col-5 text-left  " style="padding: 0px 10px">Locked
                   </div>
                   <div class="col-7 text-right text-success " style=" padding: 0px 10px">
-                  <span><%=  data.stakinginfo[a][6]/(10**8)  %> </span> <span class='sym-<%=  data.stakinginfo[a][0].toLowerCase() %>'>Token</span>
+                  <span><%=  number_format(data.stakinginfo[a][6]/(10**8))  %> </span> <span class='sym-<%=  data.stakinginfo[a][0].toLowerCase() %>'>Token</span>
                   </div>
                   </div>
                 <div class="row font-weight-bold">
@@ -174,6 +191,14 @@
                   $ <span class='total-liq-staking-pid-<%=  a  %>'>0</span>
                   </div>
                   </div>
+
+                  <div class="row font-weight-bold">
+                    <div class="col-5 text-left  " style="padding: 0px 10px">Reward
+                    </div>
+                    <div class="col-7 text-right text-success " style=" padding: 0px 10px">
+                      <%=  number_format(data.stakinginfo[a][7]/(10**data.stakinginfo[a][3])) %> <span class='sym-<%=  data.stakinginfo[a][1].toLowerCase() %>'>Token</span>
+                    </div>
+                    </div>
 
                   
 
