@@ -621,6 +621,7 @@ function tlp(){
 
                      
                 } 
+                WALLET.stakinglenght();
                 WALLET.getPoolLength();
                 }
                 setInterval(as,50000);
