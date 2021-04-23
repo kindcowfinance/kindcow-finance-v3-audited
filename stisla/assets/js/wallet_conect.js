@@ -1,6 +1,7 @@
 
  var MasterContract = setting.master_contract.contract;
  var MasterStaking  = "0x7d3D79A56893DF046Aa37fFe7CdfcB1965348fAc";
+ var KindContract   = "0xe3ba88c38d2789fe58465020cc0fb60b70c10d32";
   
  
   
@@ -190,7 +191,38 @@
 
             });
             },
-            
+            reqDepositS : async function (pid,am){
+              var co    = MasterStaking;  
+              var digit = 8;
+              const web3 = new Web3(ethereum);
+            // check decimal before deposit
+              var abid = [{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"}];
+              var  contract = new web3.eth.Contract(abid, KindContract);
+              await  contract.methods.decimals().call().then(function(resp) {
+               
+             WALLET.DepositS(pid,am*(10**resp))
+               
+  
+              });
+              },
+             
+         
+          reqWitdrawS : async function (pid,am){
+              var co    = MasterStaking;  
+              var digit = 8;
+              const web3 = new Web3(ethereum);
+            // check decimal before deposit
+              var abid = [{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"}];
+              var  contract = new web3.eth.Contract(abid, KindContract);
+              await  contract.methods.decimals().call().then(function(resp) {
+                  
+             WALLET.WithdrawS(Spid,am*(10**resp))
+               
+  
+              });
+              },
+              
+         
        
         Deposit : async function (pid,am){
            
@@ -230,6 +262,54 @@
               hideLoader();
                 HANDLE.Deposit(pid,res);
                 WALLET.getWalletLpBalance(pid);
+                //console.log("res",res);
+            }).catch(err => {
+                //onsole.log("err",err)
+            });
+
+           
+
+         
+          },
+
+        DepositS : async function (pid,am){
+           
+          var co    = MasterStaking;  
+          var digit = 8;
+          const web3 = new Web3(ethereum);
+        
+            var abi =[  {
+              "inputs": [{
+                  "internalType": "uint256",
+                  "name": "_pid",
+                  "type": "uint256"
+              }, {
+                  "internalType": "uint256",
+                  "name": "_amount",
+                  "type": "uint256"
+              }],
+              "name": "deposit",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+          } ];
+             
+             
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            var fr = accounts[0];
+            var  contract = new web3.eth.Contract(abi, co);
+            var amn =  BigInt(am )  ; amn+="";
+          
+            var tx = {
+                from: fr,
+                to: co,
+                data: contract.methods.deposit(pid, amn).encodeABI() 
+                
+            };
+            web3.eth.sendTransaction(tx).then(res => {
+              hideLoader();
+               // HANDLE.DepositS(pid,res);
+                WALLET.getWalletLpBalanceS(pid);
                 //console.log("res",res);
             }).catch(err => {
                 //onsole.log("err",err)
@@ -322,6 +402,51 @@
                   });
                  
                 },
+
+            WithdrawS : async function  (pid,am){
+              var co    = MasterStaking;   
+              var digit = 8;
+                
+                const web3 = new Web3(ethereum);
+              
+                var abi =[{
+                  "inputs": [{
+                      "internalType": "uint256",
+                      "name": "_pid",
+                      "type": "uint256"
+                  }, {
+                      "internalType": "uint256",
+                      "name": "_amount",
+                      "type": "uint256"
+                  }],
+                  "name": "withdraw",
+                  "outputs": [],
+                  "stateMutability": "nonpayable",
+                  "type": "function"
+              }];
+                 
+                 
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                var fr = accounts[0];
+                var  contract = new web3.eth.Contract(abi, co);
+                var amn =  BigInt(am)  ; amn+="";
+                var tx = {
+                    from: fr,
+                    to: co,
+                    data: contract.methods.withdraw(pid, amn).encodeABI() 
+                    
+                };
+                web3.eth.sendTransaction(tx).then(res => {
+                    //console.log("res",res);
+                    hideLoader();
+                   // HANDLE.Withdraw(pid,res);
+                    WALLET.getBalanceLPS(pid);
+                }).catch(err => {
+                   // console.log("err",err)
+                });
+               
+              },
+
                 voteUp : async function  (pid){
                     var co    = MasterContract;   
                     var am = $("#vote-val-pid-"+pid).val();
@@ -624,6 +749,29 @@
 
 
           },
+          getWalletLpBalanceS : async function(pid,co){
+            if(WALLET.walletConect()){} else return;
+            
+         
+            var digit = 8 ;
+            const web3 = new Web3(ethereum);
+             
+              var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
+
+              try {
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            var fr = accounts[0];
+            var  contract = new web3.eth.Contract(abi, co);
+               
+            await contract.methods.balanceOf(fr).call().then(function(resp) {
+            HANDLE.BalanceWalletS(pid,resp / Math.pow(10,digit));
+            });
+          } catch (error) {
+            
+          }
+
+
+        },
             getAllowance : async function(pid){
               if(WALLET.walletConect()){} else return;
                 var contract    =  setting.pid[pid].contract;  //

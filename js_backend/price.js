@@ -56,7 +56,7 @@ price1['token_lp']['cow']={};
 function arrayprice(){
   setting.list_token.forEach(e => {
 
-    console.log(e);
+    //console.log(e);
     price1['priceid'][e[1]]=price1['price'][e[0]];
     //price1['contract'][e[0]]=e[1];
 

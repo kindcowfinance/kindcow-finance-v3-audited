@@ -11,8 +11,10 @@ var id = document.getElementsByClassName("mywallet-address");
 if (id.length > 0) {
   var  addr = id[0].innerText;
   if(addr!=last_address){run_aff=1;regis=0;doneaff=0;
+    if(document.getElementById('link-aff')) {
     document.getElementById('link-aff').innerHTML = "https://kindcow.finance/id/{your_id}";
     document.getElementById('aff-id').innerHTML = 0;
+    }
 }
   if(run_aff==0)return;
 
@@ -48,6 +50,7 @@ aff();
 setInterval(aff,5000);
 
 function save_upline(){
+  if(document.getElementById('upline')) {} else return;
     var id = document.getElementById("upline").value;
 
     var urlapi ="https://api.kindcow.finance/up.php?id="+id;
@@ -108,6 +111,7 @@ function register(){
 
 function reg(){
     if(regis)return;
+    if(document.getElementById('upline')) {} else return;
     var id = document.getElementById("upline").value;
     var add = document.getElementsByClassName("mywallet-address");
     if (id.length > 0) {

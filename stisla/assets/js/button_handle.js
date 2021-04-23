@@ -13,6 +13,8 @@ var classApprove      = Array();
 var classTotalLiq      = Array();
 var classApproveDeposit = Array();
 var classApproveWithdraw = Array();
+var classApproveDepositS = Array();
+var classApproveWithdrawS = Array();
 var classRodaDeposit = Array();
 var classRodaWithdraw = Array();
 var classApproveStaking=Array();
@@ -37,6 +39,9 @@ var HANDLE_THIS = function(){
     classRodaDeposit = Array();
     classRodaWithdraw = Array();
     classApproveStaking=Array();
+
+    classRodaDepositS = Array();
+    classRodaWithdrawS = Array();
   
 
 var allElements = document.querySelectorAll('*');
@@ -60,8 +65,13 @@ for (var i = 0; i < allElements.length; i++) {
       if (cls.indexOf("get-approve-pid") >= 0)classApprove.push(cls);
       if (cls.indexOf("get-approve-staking-pid") >= 0)classApproveStaking.push(cls);
       if (cls.indexOf("total-liq-pid") >= 0)classTotalLiq.push(cls);
+
       if (cls.indexOf("approve-deposit-lp-pid") >= 0)classApproveDeposit.push(cls);
       if (cls.indexOf("approve-withdraw-lp-pid") >= 0)classApproveWithdraw.push(cls);
+
+      if (cls.indexOf("approve-deposit-lp-staking-pid") >= 0)classApproveDepositS.push(cls);
+      if (cls.indexOf("approve-withdraw-lp-staking-pid") >= 0)classApproveWithdrawS.push(cls);
+
       if (cls.indexOf("roda-wd") >= 0)classRodaWithdraw.push(cls);
       if (cls.indexOf("roda-dp") >= 0)classRodaDeposit.push(cls);
     }
@@ -160,6 +170,19 @@ classApproveDeposit.forEach(function(a){
     });
 })
 
+classApproveDepositS.forEach(function(a){
+  
+  document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
+      loading(event.target);
+      showLoader();
+      var dp = document.querySelectorAll(".amount-deposit-lp-staking-pid-"+(a.replace("approve-deposit-lp-staking-pid-","")*1))[0].value ;
+
+       
+    WALLET.reqDepositS(a.replace("approve-deposit-lp-staking-pid-","")*1,dp);
+    });
+})
+
+
 classApproveWithdraw.forEach(function(a){
   
   document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
@@ -167,6 +190,17 @@ classApproveWithdraw.forEach(function(a){
       showLoader();
       var dp = document.querySelectorAll(".amount-withdraw-lp-pid-"+(a.replace("approve-withdraw-lp-pid-","")*1))[0].value ;
       WALLET.reqWitdraw(a.replace("approve-withdraw-lp-pid-","")*1,dp);
+    });
+})
+
+
+classApproveWithdrawS.forEach(function(a){
+  
+  document.querySelectorAll("."+a)[0].addEventListener('click', function(event) {
+      loading(event.target);
+      showLoader();
+      var dp = document.querySelectorAll(".amount-withdraw-lp-staking-pid-"+(a.replace("approve-withdraw-lp-staking-pid-","")*1))[0].value ;
+      WALLET.reqWitdrawS(a.replace("approve-withdraw-lp-staking-pid-","")*1,dp);
     });
 })
 

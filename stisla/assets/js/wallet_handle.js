@@ -343,6 +343,19 @@ var HANDLE ={
 
        // console.log('data' + datas);
     },
+    BalanceWalletS : function (pid,res) {
+        
+        if(document.getElementsByClassName('your-wallet-lp-staking-pid-'+pid).length>0)
+        {
+        document.getElementsByClassName('your-wallet-lp-staking-pid-'+pid)[0].innerHTML = number_format(res,12);
+        }
+        if(document.getElementsByClassName('r-your-wallet-lp-staking-pid-'+pid).length>0)
+        {
+        document.getElementsByClassName('r-your-wallet-lp-staking-pid-'+pid)[0].innerHTML =  number_format(res,18);
+        }
+
+       // console.log('data' + datas);
+    },
     poolReward : function (res) {
         
         if(document.getElementById('reward-voter')!== null)

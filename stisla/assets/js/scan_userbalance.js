@@ -84,6 +84,7 @@ function rate(){
             
             WALLET.getPendingRewardS(a);
             WALLET.getBalanceLPS(a);
+            WALLET.getWalletLpBalanceS(a,data.stakinginfo[a][0]);
 
 
             if($('.total-liq-staking-pid-'+a).length>0)
