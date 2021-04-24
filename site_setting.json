@@ -3,15 +3,16 @@
                     "digits":8
                 },
                 "swap" : ["https://julswap.com/",
-                    "https://v1exchange.pancakeswap.finance/", "https://exchange.pancakeswap.finance/"
+                    "https://v1exchange.pancakeswap.finance/", "https://exchange.pancakeswap.finance/","https://exchange.pancakeswap.finance/"
                 ], 
                 "info" : [
                     "https://julswap.info/",
-                    "https://pancakeswap.info/", "https://pancakeswap.info/"
+                    "https://pancakeswap.info/", "https://pancakeswap.info/","https://pancakeswap.info/"
                 ],
                 "website" : [
                     "Julswap",
                     "Pcs (OLD)",
+                    "Pancakeswap(Distcontinue)",
                     "Pancakeswap"
                 ],
     "master_contract":  {  "contract": "0xd57079d80b57cd18a0fad9c7b5af4d39c016d5f5",
@@ -231,10 +232,18 @@
                     "digits":18,
                     "swap":2
 
+                },
+                { "contract":"0x18d44f8d997b935966e9b9228967c0e2fbd7f0e4",
+                    "token1":"0xe3ba88c38d2789fe58465020cc0fb60b70c10d32",
+                    "token2":"eth",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":3
+
                 }
                 
 
-
+                
                 
                 
 
