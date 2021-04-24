@@ -104,7 +104,7 @@ function rate(){
                 if($('.total-liq-staking-pid-'+a).length>0){
                     var lq=$('.total-liq-staking-pid-'+a).html();
                     var rd=$('.block-reward-staking-pid-'+a).html();
-                    rd = rd * 20 * 60 * 60 * 24 * r;
+                    rd = rd * 28512 * r;
                     var apr =((rd*356)/lq)*100;
                     var apd = apr/350;
                 
