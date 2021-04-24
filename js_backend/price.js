@@ -1,6 +1,7 @@
 const setting   =   require("../site_setting.json");
 const request = require('request'); 
 const Web3 = require('web3'); 
+var serverbnb = "https://bsc-dataseed1.defibit.io";
 
 
 var bitsten = {};
@@ -105,7 +106,7 @@ setInterval(function(){
 var  WALLET ={
         getrate : async function(c,p,d1,d2){
         if(c=="eth")return;
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
          
           var abi   =[{"constant":true,"inputs":[],"name":"getReserves","outputs":[{"internalType":"uint112","name":"_reserve0","type":"uint112"},{"internalType":"uint112","name":"_reserve1","type":"uint112"},{"internalType":"uint32","name":"_blockTimestampLast","type":"uint32"}],"payable":false,"stateMutability":"view","type":"function"}];
 
@@ -127,7 +128,7 @@ var  WALLET ={
         var co    = setting.master_contract.contract;  //
         if(co=="eth")return;
         //console.log(co);
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
          
           var abi   =[{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"lpToken","type":"address"},{"internalType":"uint256","name":"allocPoint","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"},{"internalType":"uint256","name":"accKindPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"}],"stateMutability":"view","type":"function"}];
           
@@ -151,7 +152,7 @@ var  WALLET ={
       // if(setting.pid[pid].type=="staking")addr=setting.master_contract.contract;
       if(con=="eth")return;
       if(addr=="eth")return;
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
        
         var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
 
@@ -169,7 +170,7 @@ var  WALLET ={
 
   }, getSupply: async function(pid){
        
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
         
         var co=setting.pid[pid].contract;
         if(co=="eth")return;
@@ -196,7 +197,7 @@ var  WALLET ={
       // console.log(con+" --- "+pid);
       if(con=="eth")return;
       if(addr=="eth")return;
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
        
         var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
         if (typeof price1['lp'][pid] == 'undefined') {
@@ -229,7 +230,7 @@ var  WALLET ={
       var addr=setting.master_contract.contract;
      var con = setting.pid[pid].contract;
      if(con=="eth")return;
-      const web3 = new Web3("https://bsc-dataseed.binance.org");
+      const web3 = new Web3(serverbnb);
      
       var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
       if (typeof price1['lp'][pid] == 'undefined') {
@@ -254,7 +255,7 @@ var  WALLET ={
 } ,getSym: async function(c){
         if(c=="eth")return;
         var co    = c;  //
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
         var abi   =[{"constant":true,"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
         price1['sym']["eth"] ="BNB";
         try {
@@ -269,7 +270,7 @@ var  WALLET ={
       if(c=="eth")return;
         var co    = c;  //
         // var digit = setting.pid[pid].digits ;
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
          
           var abi   =[{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}
         ];
@@ -287,7 +288,7 @@ var  WALLET ={
       var co    = setting.master_contract.contract;  //
       if(co=="eth")return;
       // var digit = setting.pid[pid].digits ;
-      const web3 = new Web3("https://bsc-dataseed.binance.org");
+      const web3 = new Web3(serverbnb);
        
         var abi   =[ {"inputs":[],"name":"total_Vote_Reward","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
       ];
@@ -312,7 +313,7 @@ var  WALLET ={
       var co    = setting.master_contract.contract;  //
       if(co=="eth")return;
       // var digit = setting.pid[pid].digits ;
-      const web3 = new Web3("https://bsc-dataseed.binance.org");
+      const web3 = new Web3(serverbnb);
        
         var abi   =[{"inputs":[],"name":"totalAllocPoint","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
       ];
@@ -336,7 +337,7 @@ var  WALLET ={
         //console.log(pid);
         var co    = setting.master_contract.contract;  //
         if(co=="eth")return;
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
          
           var abi   =[{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"lpToken","type":"address"},{"internalType":"uint256","name":"allocPoint","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"},{"internalType":"uint256","name":"accKindPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"}],"stateMutability":"view","type":"function"}];
 
@@ -356,7 +357,7 @@ var  WALLET ={
        
       var co    = c;  //
       if(co=="eth")return;
-      const web3 = new Web3("https://bsc-dataseed.binance.org");
+      const web3 = new Web3(serverbnb);
 
       
     
@@ -376,7 +377,7 @@ var  WALLET ={
   },
     burn : async function(c,d){
       var a = "0x0000000000000000000000000000000000000000";
-        const web3 = new Web3("https://bsc-dataseed.binance.org");
+        const web3 = new Web3(serverbnb);
                
                 var abi   =[{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}];
 
@@ -399,7 +400,7 @@ var  WALLET ={
                 try {
                 var co    = c;  //
                 if(co=="eth")return;
-                const web3 = new Web3("https://bsc-dataseed.binance.org");
+                const web3 = new Web3(serverbnb);
         
                 var abid = [{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"}];
                 var  contract = new web3.eth.Contract(abid, co);
@@ -416,7 +417,7 @@ var  WALLET ={
                   var co    = setting.master_contract.contract;  //
                   if(co=="eth")return;
                   // var digit = setting.pid[pid].digits ;
-                  const web3 = new Web3("https://bsc-dataseed.binance.org");
+                  const web3 = new Web3(serverbnb);
                    
                     var abi   =[{
                       "inputs": [],
@@ -444,7 +445,7 @@ var  WALLET ={
                 var co    = "0x7d3d79a56893df046aa37ffe7cdfcb1965348fac";   
                 
                   
-                  const web3 = new Web3("https://bsc-dataseed.binance.org");
+                  const web3 = new Web3(serverbnb);
                   var abi =[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"EmergencyWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[{"internalType":"contract IERC20","name":"_tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"_tokenReward","type":"address"},{"internalType":"uint256","name":"_rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"_decimal","type":"uint256"},{"internalType":"uint256","name":"_startBlock","type":"uint256"}],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"balanceLP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"emergencyWithdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"massUpdatePools","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"pendingReward","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"tokenReward","type":"address"},{"internalType":"uint256","name":"rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"decimal","type":"uint256"},{"internalType":"uint256","name":"startBlock","type":"uint256"},{"internalType":"uint256","name":"accPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"},{"internalType":"uint256","name":"rewardAvailable","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"poolLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"updatePool","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"updateRewardPerBlock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"address","name":"","type":"address"}],"name":"userInfo","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"rewardDebt","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
                    
                  
@@ -465,7 +466,7 @@ var  WALLET ={
                   var co    = "0x7d3d79a56893df046aa37ffe7cdfcb1965348fac";   
                   
                     
-                    const web3 = new Web3("https://bsc-dataseed.binance.org");
+                    const web3 = new Web3(serverbnb);
                     var abi =[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"EmergencyWithdraw","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":true,"internalType":"uint256","name":"pid","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"amount","type":"uint256"}],"name":"Withdraw","type":"event"},{"inputs":[{"internalType":"contract IERC20","name":"_tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"_tokenReward","type":"address"},{"internalType":"uint256","name":"_rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"_decimal","type":"uint256"},{"internalType":"uint256","name":"_startBlock","type":"uint256"}],"name":"add","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"balanceLP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"deposit","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"depositReward","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"emergencyWithdraw","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"massUpdatePools","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"address","name":"_user","type":"address"}],"name":"pendingReward","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"poolInfo","outputs":[{"internalType":"contract IERC20","name":"tokenStaking","type":"address"},{"internalType":"contract IERC20","name":"tokenReward","type":"address"},{"internalType":"uint256","name":"rewardPerBlock","type":"uint256"},{"internalType":"uint256","name":"decimal","type":"uint256"},{"internalType":"uint256","name":"startBlock","type":"uint256"},{"internalType":"uint256","name":"accPerShare","type":"uint256"},{"internalType":"uint256","name":"totalLP","type":"uint256"},{"internalType":"uint256","name":"rewardAvailable","type":"uint256"},{"internalType":"uint256","name":"lastRewardBlock","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"poolLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"}],"name":"updatePool","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"updateRewardPerBlock","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"address","name":"","type":"address"}],"name":"userInfo","outputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"uint256","name":"rewardDebt","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_pid","type":"uint256"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
                      
                    

@@ -142,13 +142,13 @@ classApprove.forEach(function(a){
       });
 })
 
-console.log(classRodaWithdraw);
+//console.log(classRodaWithdraw);
 
 //approve
 classRodaWithdraw.forEach(function(a){
-  console.log(a);
+  //console.log(a);
   document.querySelectorAll("."+a)[0].addEventListener('onchange', function(event) {
-      console.log(document.getElementsByClassName(a).value);
+     // console.log(document.getElementsByClassName(a).value);
       HANDLE.rodawd(a.replace("roda-wd-","")*1);
 
     });

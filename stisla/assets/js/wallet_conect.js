@@ -2,8 +2,8 @@
  var MasterContract = setting.master_contract.contract;
  var MasterStaking  = "0x7d3D79A56893DF046Aa37fFe7CdfcB1965348fAc";
  var KindContract   = "0xe3ba88c38d2789fe58465020cc0fb60b70c10d32";
-  
- 
+ var serverbnb = "https://bsc-dataseed1.defibit.io";
+
   
 
  var WALLET = {

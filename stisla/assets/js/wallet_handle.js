@@ -226,6 +226,17 @@ var HANDLE ={
         if ($('.alloc-pid-'+pid).length>0) 
         document.getElementsByClassName('alloc-pid-'+pid)[0].innerHTML = number_format(res[1],0);
         if ($('.block-reward-pid-'+pid).length>0) {
+           
+             if(document.getElementById('pid-box-'+pid)){
+            if(res[1]<10000)document.getElementById('pid-box-'+pid).style.display="none";
+            if(res[1]>=10000)document.getElementById('pid-box-'+pid).style.display="";
+             }
+
+             if(document.getElementById('pid-boxp-'+pid)){
+            if(res[1]<10000)document.getElementById('pid-boxp-'+pid).style.display="";
+            if(res[1]>=10000)document.getElementById('pid-boxp-'+pid).style.display="none";
+             }
+
         if(res[1]<10000)document.getElementById('pid-boxs-'+pid).style.display="none";
         if(res[1]>=10000)document.getElementById('pid-boxs-'+pid).style.display="";
         if(res[1]>=10000)document.getElementById('pid-boxh-'+pid).style.display="none";
