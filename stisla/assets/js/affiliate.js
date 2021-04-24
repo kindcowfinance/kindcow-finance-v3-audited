@@ -100,7 +100,7 @@ function register(){
     save_upline();
     }
     else {
-       if($('#box-aff'))
+       if(document.getElementById('box-aff'))
        document.getElementById('box-aff').style.display="";
 
 

@@ -92,6 +92,7 @@ function rate(){
                 //console.log(value);
                 var v = value[6]/(10**8);
                 var r = data.priceid[value[0].toLowerCase()];
+                var r2 = data.priceid[value[1].toLowerCase()];
 
                 
 
@@ -104,7 +105,7 @@ function rate(){
                 if($('.total-liq-staking-pid-'+a).length>0){
                     var lq=$('.total-liq-staking-pid-'+a).html();
                     var rd=$('.block-reward-staking-pid-'+a).html();
-                    rd = rd * 28512 * r;
+                    rd = rd * 28512 * r2;
                     var apr =((rd*356)/lq)*100;
                     var apd = apr/350;
                 
