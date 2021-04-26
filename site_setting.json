@@ -240,6 +240,14 @@
                     "digits":18,
                     "swap":3
 
+                },
+                { "contract":"0xc8a7436610400a271a8969ab17ec41229a5ae188",
+                    "token1":"0x33d53608167ac3679c0fe9f7a7a725891cf0f471",
+                    "token2":"eth",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":3
+
                 }
                 
 
