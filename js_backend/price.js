@@ -68,13 +68,13 @@ arrayprice();
 setInterval(function(){
   WALLET.getrate("0x1b96b92314c44b159149f7e0303511fb2fc4774f","BNB_BUSD",18,18);
   WALLET.getrate("0xfa122859b899d2692fa31ce8033448dfbfd6e6ec","COW_BUSD",8,18);
-        WALLET.getrate("0x3b3213e8f78ed08bfc0c5640f730e9f0861967f1","KIND_BUSD",8,18);
+        WALLET.getrate("0xebb77b3414af083e523df915f78df19b7ddd3969","KIND_BUSD",8,18);
         WALLET.getrate("0x0d38be02d322648eb895c6e52d8dc89a6e491c2c","ORE_KIND",10,8);
         WALLET.getrate("0xdC6C130299E53ACD2CC2D291fa10552CA2198a6b","WATCH_BNB",18,18);
-        WALLET.getrate("0x233242524229B8CEA887645746C8849577F88Aa2","WBST_BUSD",18,18);
+        WALLET.getrate("0x0511e110c536558db3dde405cd334621ca881221","WBST_BUSD",18,18);
         WALLET.getrate("0x3557af1c6b0b34767f5ad7fc2b16378f3a4f5dd5","WHIRL_BNB",18,18);
-        WALLET.getrate("0xE85323D9D8060F2b22d906cc794D02F3604Bb4cB","OGC_BUSD",8,18);
-       
+        //WALLET.getrate("0xE85323D9D8060F2b22d906cc794D02F3604Bb4cB","OGC_BUSD",8,18);
+        WALLET.getrate("0xc8a7436610400a271a8969ab17ec41229a5ae188","OGC_BNB",8,18);
         setting.price_feed.forEach(element => {
             
         //if(element[3]=="USDT")
@@ -89,7 +89,7 @@ setInterval(function(){
         price1['price']["WATCH"]  = price1['pair']['WATCH_BNB']*price1['price']['BNB'];
         price1['price']["BST"]  = price1['pair']['WBST_BUSD'];
         price1['price']["WBST"]  = price1['pair']['WBST_BUSD'];
-        price1['price']["OGC"]  = price1['pair']['OGC_BUSD'];
+        price1['price']["OGC"]  = price1['pair']['OGC_BNB'] * price1['pair']['BNB_BUSD'];
         price1['price']["COW"]  = price1['pair']['COW_BUSD'];
         price1['price']["WHIRL"]  = price1['pair']['WHIRL_BNB']*price1['price']['BNB'];
 
