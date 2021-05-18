@@ -1,11 +1,15 @@
 var allpid = setting.pid;
 //console.log(allpid);
 function lp(){
- console.log(USER_BALANCE_ESTIMATION);
-USER_BALANCE_ESTIMATION =0;
+// console.log(USER_BALANCE_ESTIMATION);
+//USER_BALANCE_ESTIMATION = Array();
+
 var a = 0;
 
 allpid.forEach(b => {
+    if (USER_BALANCE_ESTIMATION[a] == undefined)USER_BALANCE_ESTIMATION[a]=Array();
+   // USER_BALANCE_ESTIMATION[a][0]=0;
+   // USER_BALANCE_ESTIMATION[a][1]=0;
  WALLET.getBalanceLP(a); 
  WALLET.getPendingReward(a); 
 
@@ -24,10 +28,39 @@ a++;
 });
 
 
+var allasset = 0;
+var c =0;
+USER_BALANCE_ESTIMATION.forEach( d =>{
+  allasset+=d[0]+d[1];
+   
+    c++;
+});
+
+if(document.getElementById("asset-estimation"))
+update_all_assets(allasset);
+
 }
 
 setInterval(lp,10000);
 lp();
+
+function update_all_assetsb(a){
+         update_all_assets(a);
+}
+function update_all_assets(a){
+   
+var e = document.getElementById("asset-estimation").innerHTML;
+console.log(e);
+if(e<a-0.0001){
+f = e*1 + (a-e)*0.1;
+document.getElementById("asset-estimation").innerHTML = number_format(f,8);
+setTimeout(function(){
+    console.log(a);
+    update_all_assetsb(a);
+}, 100);
+}
+
+}
 
 
 

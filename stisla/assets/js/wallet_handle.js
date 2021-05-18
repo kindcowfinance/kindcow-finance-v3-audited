@@ -1,12 +1,22 @@
 var KINDPRICE = 0;
-var USER_BALANCE_ESTIMATION = 0;
+var USER_BALANCE_ESTIMATION = Array(Array());
 var TOTAL_ALOCT = 99999999999999;
 var RATE_PID = {};
 
 function global(pid,res){
-    USER_BALANCE_ESTIMATION+= RATE_PID[pid]*res;
-    if(document.getElementById("asset-estimation").innerHTML.length>0)
-document.getElementById("asset-estimation").innerHTML = number_format(USER_BALANCE_ESTIMATION);
+    
+    USER_BALANCE_ESTIMATION[pid][0] = RATE_PID[pid]*res;
+//    if(document.getElementById("asset-estimation").innerHTML.length>0)
+//    if(document.getElementById("asset-estimation").innerHTML<USER_BALANCE_ESTIMATION)
+//document.getElementById("asset-estimation").innerHTML = number_format(USER_BALANCE_ESTIMATION,5);
+}
+
+function globalp(pid,res){
+//   USER_BALANCE_ESTIMATION = RATE_PID[pid]*res;
+USER_BALANCE_ESTIMATION[pid][1] = RATE_PID[0]*res;
+//    if(document.getElementById("asset-estimation").innerHTML.length>0)
+//   if(document.getElementById("asset-estimation").innerHTML<USER_BALANCE_ESTIMATION)
+//document.getElementById("asset-estimation").innerHTML = number_format(USER_BALANCE_ESTIMATION,5);
 }
 var HANDLE ={
     Deposit : function(pid,res){
@@ -149,6 +159,8 @@ var HANDLE ={
         {
         document.getElementsByClassName('pending-reward-pid-'+pid)[0].innerHTML = number_format(res);
         }
+
+        globalp(pid,res);
         
     },
     BalanceLP : function (pid,res) {
@@ -366,6 +378,7 @@ var HANDLE ={
         }
 
        // console.log('data' + datas);
+       // global(pid,res);
     },
     BalanceWalletS : function (pid,res) {
         
