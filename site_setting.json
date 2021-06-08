@@ -256,9 +256,19 @@
                     "digits":18,
                     "swap":3
 
+                },
+                { "contract":"0xedbb89bd923e3f8e969e402a1664c0265028ed7f",
+                    "token1":"0xe9e7cea3dedca5984780bafc599bd69add087d56",
+                    "token2":"0x5ff2716cd0f704f04984dccb584a9da5b23584be",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":3
+
                 }
 
 
+
+                
                 
                 
 
