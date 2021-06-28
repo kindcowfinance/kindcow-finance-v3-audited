@@ -264,7 +264,29 @@
                     "digits":18,
                     "swap":3
 
+                },{ "contract":"0x3641e687dcdce44821a1768ce283273904697abf",
+                    "token1":"0x30e104a187aa257f92ed497ee73f3b832f6781d1",
+                    "token2":"0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+                    "type":"farm",
+                    "digits":18,
+                    "swap":3
+
+                },{ "contract":"0x58f876857a02d6762e0101bb5c46a8c1ed44dc16",
+                    "token1":"",
+                    "token2":"",
+                    "type":"pool",
+                    "digits":18,
+                    "swap":3
+
+                },{ "contract":"0x58f876857a02d6762e0101bb5c46a8c1ed44dc16",
+                    "token1":"",
+                    "token2":"",
+                    "type":"pool",
+                    "digits":18,
+                    "swap":3
+
                 }
+                
 
 
 
