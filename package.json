@@ -1,5 +1,5 @@
 {
-  "name": "bitstenfinance",
+  "name": "kindcowfinance",
   "version": "1.0.0",
   "description": "Used",
   "main": "express_full.js",
@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bisrimpn/bitstenfinance.git"
+    "url": "git+https://github.com/kindcowfinance/kindcow-finance-v3-audited.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bisrimpn/bitstenfinance/issues"
+    "url": "https://github.com/kindcowfinance"
   },
-  "homepage": "https://github.com/bisrimpn/bitstenfinance#readme"
+  "homepage": "https://github.com/kindcowfinance"
 }
