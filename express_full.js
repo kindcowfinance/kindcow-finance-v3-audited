@@ -177,6 +177,24 @@ app.get('/affiliate',function(req,res){
    res.render('pages/affiliate',{'data' :   data });
 });
 
+
+app.get('/kind-gold',function(req,res){
+  var data = Array();
+    data['setting']=Array();
+   res.render('pages/kind-gold',{'data' :   data });
+});
+
+
+app.get('/step',function(req,res){
+  var data = Array();
+  var id = 1;
+  if(req.query.id)id = req.query.id;
+    data['setting']=Array();
+    data["title"] = "Step "+id+" to solve problem ";
+    data["url"] = "Step";
+   res.render('pages/step'+id,{'data' :   data });
+});
+
  app.get('/price',function(req,res){
    res.setHeader('Content-Type', 'application/json');
    //console.log(price)
