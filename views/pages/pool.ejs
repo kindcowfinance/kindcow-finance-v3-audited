@@ -6,7 +6,7 @@
   
 <% for( var a=0; a <  (data.setting.pid.length) ;  a++ ){  -%>
 <%  if( data.setting.pid[a].type  != "staking") continue; %>
- 
+<%  if( a==0 ) continue; %> 
   
     <div class="col-12  col-md-4 col-lg-4 diradius list-project"  >
       <div class="pricing pricing-highlight">
