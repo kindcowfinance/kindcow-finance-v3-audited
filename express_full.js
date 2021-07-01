@@ -178,11 +178,7 @@ app.get('/affiliate',function(req,res){
 });
 
 
-app.get('/kind-gold',function(req,res){
-  var data = Array();
-    data['setting']=Array();
-   res.render('pages/kind-gold',{'data' :   data });
-});
+ 
 
 
 app.get('/step',function(req,res){
@@ -190,7 +186,7 @@ app.get('/step',function(req,res){
   var id = 1;
   if(req.query.id)id = req.query.id;
     data['setting']=Array();
-    data["title"] = "Step "+id+" to solve problem ";
+    data["title"] = "Step "+id;
     data["url"] = "Step";
    res.render('pages/step'+id,{'data' :   data });
 });
